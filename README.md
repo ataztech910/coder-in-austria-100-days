@@ -1,36 +1,23 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Coder in Austria. 100 days challenge
 
-## Getting Started
+This is a source code for the 100 days challenge. The rules for the challenge are:
 
-First, run the development server:
+1. Create an educational platform in 100 days  
+2. Use only free or partly free tools  (Contentful, AWS Amplify, Vercel, MongoDB, GraphQL, etc.)
+3. Make a daily video reports (upd. I cant do that right now. Sorry =( )  
+4. Spend not more than 45 minutes a day  
+5. NextJS will be in the core 
+6. The main part - have fun, it is not a way to billion dollars ( for the current state I just make it as a discipline and moving to finish )
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-[http://localhost:3000/api/hello](http://localhost:3000/api/hello) is an endpoint that uses [Route Handlers](https://beta.nextjs.org/docs/routing/route-handlers). This endpoint can be edited in `app/api/hello/route.ts`.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Sprint 1/10
+- Day 1. Challenge planning for the next 10 days ✅
+- Day 2. Application purpose and requirements ✅
+- Day 3. Design mockup and user experience. First iteration ✅
+- Day 4. Decompose to partials ✅
+- Day 5. Structure creation ✅
+- Day 6. Smoke tests for application logic ✅
+- Day 7. Header component ⌚
+- Day 8. Footer component ⌚
+- Day 9. E2E test for Header and Footer ⌚
+- Day 10. Main page component with mock data ⌚
+- Day 11. E2E test for main page ⌚
