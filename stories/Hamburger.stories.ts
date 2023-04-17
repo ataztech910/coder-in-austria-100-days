@@ -1,10 +1,9 @@
-import Header from '@/app/components/Header';
+import SideBarHamburger from '@/app/ui/atoms/SidebarHamburger';
 import type { Meta, StoryObj } from '@storybook/react';
-import '@/app/globals.scss';
 
-const meta: Meta<typeof Header> = {
-  title: 'Example/Header',
-  component: Header,
+const meta: Meta<typeof SideBarHamburger> = {
+  title: 'Example/SideBarHamburger',
+  component: SideBarHamburger,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ['autodocs'],
   parameters: {
@@ -14,14 +13,12 @@ const meta: Meta<typeof Header> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Header>;
+type Story = StoryObj<typeof SideBarHamburger>;
 
-export const LoggedIn: Story = {
+export const Closed: Story = {
   args: {
-    user: {
-      name: 'Jane Doe',
-    },
+    isClosed: true,
   },
 };
 
-export const LoggedOut: Story = {};
+export const Open: Story = {};

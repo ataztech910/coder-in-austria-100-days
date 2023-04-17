@@ -1,0 +1,72 @@
+@import '../../colors';
+
+.inputLayout {
+   position: relative;
+   div, button {
+    top: 0;
+   }
+   input {
+    border-radius: 2rem;
+    outline-color: $darkGray;
+    min-width: 280px;
+   }
+}
+
+.leftIcon {
+    left: 0;
+}
+
+.button {
+    background: $lightBlue;
+    border: 1px solid $lightBlue;
+    border-radius: 4rem;
+    text-align: center;
+    transition: 0.2s;
+    &:hover {
+        background-color: $middleBlue;
+        &::after {
+            content: "";
+            position: absolute;
+            left: 56%;
+            top: 2px;
+            width: 15px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #fff;
+            clear: both;
+            transform: rotate(30deg);
+            transition: 0.1s;
+        }
+    }
+    &:active {
+        border: 1px solid $darkGray;
+        border-radius: 4rem;
+    }
+    &::before {}
+    &::after {
+        content: "";
+        position: absolute;
+        left: 56%;
+        top: 3px;
+        width: 15px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: #fff;
+        clear: both;
+        transform: rotate(30deg);
+        transition: 0.1s;
+    }
+}
+
+.rightIcon {
+    right: 0;
+    padding: 0.7rem;
+    width: 48px;
+    @extend .button;
+}
+
+.topSearch {
+    background-color: $purple;
+    padding: 1rem;
+    font-size: 0.7em;
+}
