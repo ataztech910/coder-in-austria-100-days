@@ -1,0 +1,11 @@
+.sidebar {
+    cursor: pointer;
+    border: 1px solid transparent;
+    width: fit-content;
+    padding: 2rem;
+    background: transparent;
+    display: block;
+    &:hover {
+        border-color: #fff;
+    }
+}
