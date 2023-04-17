@@ -17,7 +17,7 @@ This is a source code for the 100 days challenge. The rules for the challenge ar
 - Day 5. Structure creation ✅
 - Day 6. Smoke tests for application logic ✅
 - Day 7. Header component ✅
-- Day 8. Footer component ⌚
+- Day 8. Footer component ✅
 - Day 9. E2E test for Header and Footer ⌚
 - Day 10. Main page component with mock data ⌚
 - Day 11. E2E test for main page ⌚

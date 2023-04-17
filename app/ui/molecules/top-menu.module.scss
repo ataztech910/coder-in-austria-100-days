@@ -12,7 +12,6 @@
     &__item {
         position: relative;
         display: inline;
-        padding: 0 2rem;
         white-space: nowrap;
         @extend .link;
         z-index: 10;
@@ -91,6 +90,8 @@
 }
 .signup {
     @extend .button;
+    @extend .buttonWithHover;
+    @extend .blueButton;
     padding: 0 1rem;
     color: $darkGray;
     &::before {}

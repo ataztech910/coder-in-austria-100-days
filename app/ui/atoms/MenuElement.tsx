@@ -22,7 +22,7 @@ export default function MenuElement(item: IMenuElement) {
     );
    
     return(
-        <li className={styles['topMenu__item']}  
+        <li className={`${styles['topMenu__item']} p-0 md:px-5`} 
             onKeyDown={(event) => { keyDown(event as unknown as React.KeyboardEvent<HTMLInputElement>) }} 
             onMouseOver={() => showChildren(true)} 
             onMouseOut={() => showChildren(false)}

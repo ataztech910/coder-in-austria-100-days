@@ -1,0 +1,12 @@
+@import '../colors';
+
+.footer {
+    background-color: $footerGray;
+    &__layout {
+        @apply block xl:flex justify-between p-10 text-center xl:text-left;
+    }
+    &__copyright {
+        @apply text-center pb-2;
+        font-size: 10px;
+    }
+}
