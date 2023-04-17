@@ -1,3 +1,4 @@
+"use client"
 import styles from '@/app/ui/molecules/top-menu.module.scss';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

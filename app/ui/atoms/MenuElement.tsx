@@ -1,3 +1,4 @@
+'use client'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import styles from '@/app/ui/molecules/top-menu.module.scss';
