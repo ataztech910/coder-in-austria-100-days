@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "test:watch": "jest --watch",
-    "storybook": "storybook dev -p 6006 -s ./public",
+    "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
   "dependencies": {

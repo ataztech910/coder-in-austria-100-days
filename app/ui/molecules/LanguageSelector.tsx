@@ -33,7 +33,7 @@ export default function LanguageSelector() {
         )
     );
     return(
-        <button className={`${styles['topMenu__item']} hidden md:block`} 
+        <button className={`${styles['topMenu__item']} hidden md:block p-0 xl:px-5`} 
             onKeyDown={(event) => { keyDown(event as unknown as React.KeyboardEvent<HTMLInputElement>) }} 
             onMouseOver={() => showChildren(true)} 
             onMouseOut={() => showChildren(false)}>

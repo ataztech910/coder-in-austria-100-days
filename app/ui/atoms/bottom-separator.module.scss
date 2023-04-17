@@ -1,0 +1,14 @@
+.bottomSeparator {
+    @apply flex mt-3 mb-7 mx-auto xl:mx-0 max-w-[40px];
+    div {
+        height: 3px;
+        background-color: #fff;
+    }
+    &__left {
+        width: 9px;
+        @apply mr-1;
+    }
+    &__right {
+        width: 31px;
+    }
+}

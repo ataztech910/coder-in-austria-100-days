@@ -8,20 +8,26 @@
    input {
     border-radius: 2rem;
     outline-color: $darkGray;
-    min-width: 280px;
+    width: 100%;
    }
 }
 
 .leftIcon {
     left: 0;
+    padding: 0.7rem;
+    width: 48px;
+    background: $iconLightGray;
+    border: 1px solid $iconLightGray;
+    @extend .button;
 }
 
 .button {
-    background: $lightBlue;
-    border: 1px solid $lightBlue;
     border-radius: 4rem;
     text-align: center;
     transition: 0.2s;
+    border: 1px solid transparent;
+}
+.buttonWithHover {
     &:hover {
         background-color: $middleBlue;
         &::after {
@@ -58,15 +64,31 @@
     }
 }
 
+.blueButton {
+    background-color: $lightBlue;
+}
+
 .rightIcon {
+    background: $lightBlue;
+    border: 1px solid $lightBlue;
     right: 0;
     padding: 0.7rem;
     width: 48px;
     @extend .button;
+    @extend .buttonWithHover;
+    @extend .blueButton;
 }
 
 .topSearch {
     background-color: $purple;
     padding: 1rem;
     font-size: 0.7em;
+    min-width: 280px;
+}
+
+.subscribe {
+    background-color: $lightGray;
+    padding: 1rem;
+    font-size: 0.7em;
+    color: $darkGray;
 }
