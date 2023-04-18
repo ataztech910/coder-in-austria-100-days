@@ -7,6 +7,7 @@ interface IMenuElement {
 interface IIcon {
     objectName: IconDefinition;
     className: string;
+    testId?: string;
 }
 
 interface IInput {

@@ -8,7 +8,8 @@ export default function TopSearch() {
         placeholder: 'search here...',
         rightIcon: {
             objectName: faMagnifyingGlass,
-            className: 'fa-xl fa-solid fa-magnifying-glass'
+            className: 'fa-xl fa-solid fa-magnifying-glass',
+            testId: 'searchButton'
         }
     };
     return(

@@ -19,7 +19,7 @@ export default function InputWithIcon(inputParams: IInput) {
                     }
                 </div>
             }
-            <button className={`absolute ${styles.rightIcon}`}>
+            <button className={`absolute ${styles.rightIcon} buttonIcon`} data-testId={inputParams.rightIcon?.testId}>
                 {
                     inputParams.rightIcon && 
                     <FontAwesomeIcon icon={inputParams.rightIcon.objectName} className={`fa fa-thin ${inputParams.rightIcon.className}`} color="white" />
