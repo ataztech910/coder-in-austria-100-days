@@ -2,7 +2,7 @@ import SideBarHamburger from '@/app/ui/atoms/SidebarHamburger';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof SideBarHamburger> = {
-  title: 'Example/SideBarHamburger',
+  title: 'UI Library/Sidebar hamburger',
   component: SideBarHamburger,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ['autodocs'],

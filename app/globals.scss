@@ -25,3 +25,24 @@ body {
 h5 {
   font-size: 20px;
 }
+
+.logo {
+  border: 1px solid transparent;
+  display: block;
+  width: fit-content;
+  &:hover {
+    border-color: #fff;
+  }
+}
+
+img, svg {
+  display: initial;
+}
+
+a .svg-inline--fa, button .svg-inline--fa {
+  max-height: 1rem;
+}
+
+.buttonIcon .svg-inline--fa {
+  max-height: 2rem;
+}

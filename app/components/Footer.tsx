@@ -25,7 +25,8 @@ export default function Footer() {
         placeholder: 'type your email here...',
         rightIcon: {
             objectName: faArrowRight,
-            className: 'fa-xl fa-solid fa-arrow-right'
+            className: 'fa-xl fa-solid fa-arrow-right',
+            testId: 'subscribe'
         },
         leftIcon: {
             objectName: faMailBulk,

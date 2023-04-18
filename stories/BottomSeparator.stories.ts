@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import BottomSeparator from '@/app/ui/atoms/BottomSepaarator';
 
 const meta: Meta<typeof BottomSeparator> = {
-  title: 'Example/BottomSeparator',
+  title: 'UI Library/Bottom separator',
   component: BottomSeparator,
   tags: ['autodocs'],
   parameters: {
