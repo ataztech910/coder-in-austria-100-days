@@ -9,15 +9,17 @@ import Logo from '../ui/atoms/Logo';
 
 export default function Header(user: any) {
     return(
-        <header className={`flex items-center justify-between ${styles.header}`}>
-            <SidebarHamburger />
-            <Logo isResponsive={true} />
-            <TopMenu />
-            <TopSearch />
-            <Separator />
-            <LanguageSelector />
-            <Separator />
-            <Login />
+        <header className={`${styles.header} sticky top-0`}>
+            <div className='flex items-center justify-between content'>
+                <SidebarHamburger />
+                <Logo isResponsive={true} />
+                <TopMenu />
+                <TopSearch />
+                <Separator />
+                <LanguageSelector />
+                <Separator />
+                <Login />
+            </div>
         </header>
     );
 }

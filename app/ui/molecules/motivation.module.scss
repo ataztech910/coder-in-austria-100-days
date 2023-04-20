@@ -1,0 +1,13 @@
+@import '../../colors';
+
+.motivation {
+    color: $darkGray;
+    @apply my-16;
+    h3 {
+        font-size: 32px;
+        @apply text-center mb-10;
+    }
+    &__cards {
+        @apply block xl:flex justify-between;
+    }
+}

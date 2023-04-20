@@ -36,28 +36,30 @@ export default function Footer() {
 
     return (
         <footer className={styles.footer}>
-            <div className={styles['footer__layout']}>
-                <div>
-                    <Logo className='m-auto xl:m-0' isResponsive={false} />
-                    <div className='m-auto xl:m-0 max-w-[400px]'>
-                        ipsum dolor sit amet consec adipisicing 
-                        elit sed do eiusmod por incidiut labore 
-                        et loreLorem ipsum kelly amieo dolorey.
+            <div className='content'>
+                <div className={styles['footer__layout']}>
+                    <div>
+                        <Logo className='m-auto xl:m-0' isResponsive={false} />
+                        <div className='m-auto xl:m-0 max-w-[400px]'>
+                            ipsum dolor sit amet consec adipisicing 
+                            elit sed do eiusmod por incidiut labore 
+                            et loreLorem ipsum kelly amieo dolorey.
+                        </div>
+                    </div>
+                    <div className='mt-10 xl:mt-0'>
+                        <h5>Important links</h5>
+                        <BottomSeparator />
+                        <ul className='p-0 m-0'>{renderMenu}</ul>
+                    </div>
+                    <div className='mt-10 xl:mt-0 min-w-[0px] xl:min-w-[500px]'>
+                        <h5>Subscribe</h5>
+                        <BottomSeparator />
+                        <InputWithIcon {...inputParams} />
                     </div>
                 </div>
-                <div className='mt-10 xl:mt-0'>
-                    <h5>Important links</h5>
-                    <BottomSeparator />
-                    <ul className='p-0 m-0'>{renderMenu}</ul>
+                <div className={styles['footer__copyright']}>
+                    Copy© Coder In Austria 2023. All Rights Reserved
                 </div>
-                <div className='mt-10 xl:mt-0 min-w-[0px] xl:min-w-[500px]'>
-                    <h5>Subscribe</h5>
-                    <BottomSeparator />
-                    <InputWithIcon {...inputParams} />
-                </div>
-            </div>
-            <div className={styles['footer__copyright']}>
-                Copy© Coder In Austria 2023. All Rights Reserved
             </div>
         </footer>
     );

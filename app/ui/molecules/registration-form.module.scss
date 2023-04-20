@@ -1,0 +1,11 @@
+@import '../../colors';
+
+.registrationForm {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid $iconLightGray;
+    @apply p-7;
+    hr {
+        @apply my-5;
+    }
+}
