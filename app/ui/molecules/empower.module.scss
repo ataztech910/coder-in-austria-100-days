@@ -1,0 +1,45 @@
+@import '../../colors';
+
+.empower {
+    color: $darkGray;
+    @apply my-20;
+
+    &__image {
+        @apply mr-0 xl:mr-20 w-full xl:w-1/2;
+    }
+    &__text {
+        h4 {
+            font-size: 24px;
+            @apply mt-5 xl:mt-0;
+        }
+        p {
+            @apply my-5;
+        }
+        hr {
+            @apply mb-10;
+        }
+        &__bullets {
+            li {
+                @apply flex items-start mb-10;
+                line-height: 1;
+            }
+            &__icon {
+               width: 20px;
+               height: 20px;
+               border-radius: 50%;
+               background-color: $inputGrayBorder;
+               @apply mr-2;
+            }
+            &__text {
+                width: 80%;
+                p {
+                    line-height: 1.5;
+                    font-size: 14px;
+                }
+            }
+        }
+        &__underlineText {
+            font-size: 12px;
+        }
+    }
+}

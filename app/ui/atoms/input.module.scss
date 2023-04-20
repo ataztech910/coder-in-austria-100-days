@@ -92,3 +92,54 @@
     font-size: 0.7em;
     color: $darkGray;
 }
+.findYourMentorInput {
+    background-color: $lightGray;
+    padding: 1rem;
+    font-size: 0.7em;
+    color: $darkGray;
+}
+
+.input {
+    @apply my-5;
+    &__title {
+        @apply mb-2;
+        color: $inputGray;
+        font-size: 10px;
+    }
+    &__item {
+        input {
+            @apply p-2;
+            border: 1px solid $inputGrayBorder;
+            background-color: $inputLightGray;
+            border-radius: 5px;
+            width: 100%;
+            outline-color: $iconLightGray;
+            font-size: 10px;
+            &:focus, &:active {
+                border-color: $darkGray;
+                outline: 0 none;
+            }
+        }
+        &__password {
+            @apply my-2;
+            font-size: 9px;
+            color: $inputGray;
+        }
+    }
+}
+
+.formButton {
+    @apply p-1;
+    font-size: 13px;
+    border-radius: 5px;
+    width: 100%;
+    background-color: $lightBlue;
+    transition: 0.2s;
+    border: 1px solid transparent;
+    &:hover {
+        background-color: $middleBlue;
+    }
+    &:active {
+        border-color: $inputGray;
+    }
+}

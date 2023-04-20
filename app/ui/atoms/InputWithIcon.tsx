@@ -9,7 +9,7 @@ export default function InputWithIcon(inputParams: IInput) {
     }
     return(
         <div className={`${styles.inputLayout} ${inputParams.additionalClasses}`}>
-            <input className={`${styles[inputParams.class]} ${hasPadding}`} type="text" placeholder={inputParams.placeholder} />
+            <input className={`${styles[inputParams.class as string]} ${hasPadding}`} type="text" placeholder={inputParams.placeholder} />
             {inputParams.leftIcon && 
                 <div className={`absolute ${styles.leftIcon}`}>
                     {
@@ -19,7 +19,7 @@ export default function InputWithIcon(inputParams: IInput) {
                     }
                 </div>
             }
-            <button className={`absolute ${styles.rightIcon} buttonIcon`} data-testId={inputParams.rightIcon?.testId}>
+            <button className={`absolute ${styles.rightIcon} buttonIcon`} data-test-id={inputParams.rightIcon?.testId}>
                 {
                     inputParams.rightIcon && 
                     <FontAwesomeIcon icon={inputParams.rightIcon.objectName} className={`fa fa-thin ${inputParams.rightIcon.className}`} color="white" />

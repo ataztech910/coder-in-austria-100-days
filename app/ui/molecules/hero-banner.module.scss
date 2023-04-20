@@ -1,0 +1,29 @@
+@import '../../colors';
+
+.heroBanner {
+    background-image: url('/banner-bg.png');
+    background-size: cover;
+    color: $darkPurple;
+    h1 {
+        font-size: 40px;
+        font-weight: bold;
+    }
+    &__layout{
+        @apply flex py-10 px-5 justify-between;
+        &__leftSide {
+            // max-width: 50%;
+            @apply max-w-[100%] xl:max-w-[50%];
+            line-height: 1.2;
+            p {
+                font-weight: light;
+                @apply my-10;
+            }
+        }
+        &__rightSide {
+            @apply hidden xl:block min-w-[30%];
+        }
+    }
+    hr {
+        border: 1px solid $underlineGray;
+    }
+}

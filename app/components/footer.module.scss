@@ -3,7 +3,7 @@
 .footer {
     background-color: $footerGray;
     &__layout {
-        @apply block xl:flex justify-between p-10 text-center xl:text-left;
+        @apply block xl:flex justify-between py-10 px-5 text-center xl:text-left;
     }
     &__copyright {
         @apply text-center pb-2;

@@ -11,9 +11,17 @@ interface IIcon {
 }
 
 interface IInput {
-    class: string;
-    placeholder: string;
+    placeholder?: string;
+    class?: string;
+    type?: string;
+    title?: string;
     additionalClasses?: string;
     leftIcon?: IIcon;
     rightIcon?: IIcon;
+}
+
+interface ICard {
+    imageUrl: Array<string>;
+    title: string;
+    description: string;
 }

@@ -16,9 +16,13 @@
         @extend .link;
         z-index: 10;
         &__childrenLayout {
+            display: none;
             position: absolute;
             top: 1.3rem;
             z-index: 9;
+            :hover > & {
+               display: block;
+            }
             &__children {
                 position: relative;
                 background-color: #fff;

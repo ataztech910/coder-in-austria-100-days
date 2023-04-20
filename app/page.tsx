@@ -1,12 +1,17 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import Empower from './ui/molecules/Empower'
+import FindYourMentor from './ui/molecules/FindYourMentor'
+import HeroBanner from './ui/molecules/HeroBanner'
+import Motivation from './ui/molecules/Motivation'
+import StatisticsLayout from './ui/molecules/StatisticsLayout'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      main
+    <main >
+      <HeroBanner />
+      <FindYourMentor />
+      <Motivation />
+      <StatisticsLayout />
+      <Empower />
     </main>
   )
 }

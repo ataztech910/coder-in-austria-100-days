@@ -15,7 +15,7 @@ describe("Smoke tests", () => {
         expect(screen.getByTestId("heroBaner")).toBeInTheDocument();
         expect(screen.getByTestId("topStatistics")).toBeInTheDocument();
         expect(screen.getByTestId("registration")).toBeInTheDocument();
-        expect(screen.getByTestId("findMentorSeaarch")).toBeInTheDocument();
+        expect(screen.getByTestId("findMentorSearch")).toBeInTheDocument();
         expect(screen.getByTestId("motivationLayout")).toBeInTheDocument();
         expect(screen.getByTestId("mainStatistics")).toBeInTheDocument();
         expect(screen.getByTestId("empowerLayout")).toBeInTheDocument();

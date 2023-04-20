@@ -1,0 +1,12 @@
+.card {
+    @apply max-w-[100%] xl:max-w-[335px] mb-10 xl:mb-0 p-5 xl:p-0;
+    &__title {
+        @apply my-10;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    &__description {
+        font-size: 14px;
+        font-weight: light;
+    }
+}

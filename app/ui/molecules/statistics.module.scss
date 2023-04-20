@@ -1,0 +1,27 @@
+@import '../../colors';
+
+.statistics {
+    @apply flex mt-10;
+    &__item {
+        @apply flex items-center mr-5;
+        &__number {
+            @apply text-base xl:text-4xl;
+        }
+        &__description {
+            @apply ml-2 text-xs xl:text-base;
+        }
+    }
+}
+
+.statisticsLayout {
+    color: $darkGray;
+    @apply text-center mb-10;
+    h3 {
+        font-size: 32px;
+    }
+    p {
+        font-size: 16px;
+        font-weight: light;
+        @apply mt-5;
+    }
+}
