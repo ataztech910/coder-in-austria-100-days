@@ -20,7 +20,7 @@
             position: absolute;
             top: 1.3rem;
             z-index: 9;
-            :hover > & {
+            :hover > &, :focus > & {
                display: block;
             }
             &__children {
