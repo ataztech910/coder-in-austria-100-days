@@ -6,7 +6,7 @@ export default function Card(cardData: ICard) {
         <div className={styles.card}>
             <picture>
                 <source media="(min-width: 1280px)" srcSet={cardData.imageUrl[0]} width='100%' />
-                <img loading="lazy" src={cardData.imageUrl[1]} width='100%' />
+                <img loading="lazy" src={cardData.imageUrl[1]} width='100%' alt={cardData.title} />
             </picture>
             <div className={styles.card__title}>{cardData.title}</div>
             <div className={styles.card__description}>{cardData.description}</div>

@@ -25,5 +25,5 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "__tests__/smoke.test.js"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "e2e/*"]
 }
