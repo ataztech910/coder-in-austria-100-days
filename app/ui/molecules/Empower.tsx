@@ -7,7 +7,7 @@ export default function Empower() {
             <div className={styles.empower__image}>
             <picture>
                 <source media="(min-width: 1280px)" srcSet='/empower.png' width='100%' />
-                <img loading="lazy" src='/empower_1.png' width='100%' />
+                <img loading="lazy" src='/empower_1.png' width='100%' alt='Empower'/>
             </picture>
             </div>
             <div className={styles.empower__text}>
