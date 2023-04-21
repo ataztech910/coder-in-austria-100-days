@@ -1,17 +1,13 @@
+'use client';
+
 import styles from '@/app/ui/molecules/top-menu.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { useMenu } from '@/app/utils/useMenu';
 
 export default function LanguageSelector() {
+    const [{ariaExpanded, toggle, changeToggleState, resetToggle}] = useMenu(false);
     const currentLanguage = { link: '', name: 'EN' };
-    // const keyDown = (event: React.KeyboardEvent<HTMLInputElement> ) => {
-    //     if(event.key === 'ArrowDown' || event.keyCode === 40) {
-    //         showChildren(true);
-    //         event.stopPropagation;
-    //         event.preventDefault;
-    //         return false;
-    //     }
-    // }
     const menuElements: Array<IMenuElement> = [
         {
             link: '/',
@@ -22,29 +18,30 @@ export default function LanguageSelector() {
             name: 'Russian',
         },
     ];
+    const toggleExpanded = (target: React.KeyboardEvent<HTMLButtonElement>) => {
+        if (target.key !== 'Enter' ) {
+            return false;
+        }
+        changeToggleState();
+    }
 
     const renderChildren = menuElements.map((child: IMenuElement) => 
         (
-            <a className="mb-1" key={child.link} href={child.link}>{child.name}</a>
+            <li key={child.link}><a className="mb-1" href={child.link}>{child.name}</a></li>
         )
     );
-    /**
-     *  onKeyDown={(event) => { keyDown(event as unknown as React.KeyboardEvent<HTMLInputElement>) }} 
-            onMouseOver={() => showChildren(true)} 
-            onMouseOut={() => showChildren(false)}
-     */
     return(
         <button className={`${styles['topMenu__item']} hidden md:block p-0 xl:px-5`} 
-           
+            onKeyDown={(e) => toggleExpanded(e)} aria-expanded={ariaExpanded}
             >
-            <div>
+            <div onMouseMove={resetToggle}>
                 {currentLanguage.name}
                 {<FontAwesomeIcon icon={faChevronDown} className="fa fa-thin fa-chevron-down ml-2" color="white" />}
             </div>
             { 
                 (
-                    <div className={styles['topMenu__item__childrenLayout']}>
-                        <div className={styles.languageSelector}>{renderChildren}</div>
+                    <div className={`${styles['topMenu__item__childrenLayout']}  ${toggle}`}>
+                        <ul className={styles.languageSelector}>{renderChildren}</ul>
                     </div>
                 )
             }

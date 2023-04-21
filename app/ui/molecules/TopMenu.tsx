@@ -30,7 +30,7 @@ export default function TopMenu() {
     const renderMenu = menuElements.map((menuItem: IMenuElement) => <MenuElement key={menuItem.link} {...menuItem} />);
            
     return(
-        <nav className={`flex hidden lg:block ${styles.topMenu}`}>
+        <nav aria-label="Main" className={`flex hidden lg:block ${styles.topMenu}`}>
             <ul>{renderMenu}</ul>
         </nav>
     );

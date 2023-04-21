@@ -14,6 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className='scroll-smooth'>
+      <title>Coder in Austria</title>
       <body>
         <Header />
         {children}
