@@ -6,7 +6,7 @@ export default function StatisticsLayout() {
         <div className={styles.statisticsLayout}>
             <h3>Home to your next coding goal</h3>
             <p>Join our professional worldwide community</p>
-            <div className='m-auto max-w-[50%]'>
+            <div className='m-auto max-w-[fit-content]'>
                 <Statistics style={''} />
             </div>
         </div> 
