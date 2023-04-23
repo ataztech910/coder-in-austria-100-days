@@ -17,7 +17,7 @@ type Story = StoryObj<typeof SideBarHamburger>;
 
 export const Closed: Story = {
   args: {
-    isClosed: true,
+    handleClick: () => void 0,
   },
 };
 
