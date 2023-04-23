@@ -23,7 +23,7 @@ This is a source code for the 100 days challenge. The rules for the challenge ar
 - Day 11. E2E test for main page ✅
 
 ### Sprint 2/10:
-- Day 1. Create the sidebar ⌚
+- Day 1. Create the sidebar ✅
 - Day 2. Create the content model in #contentful (main page, blog) ⌚
 - Day 3. Create connection API for data and frontend ⌚
 - Day 4. Create main page content and connect it with frontend ⌚

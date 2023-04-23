@@ -32,7 +32,9 @@ export default function LanguageSelector() {
     );
     return(
         <button className={`${styles['topMenu__item']} hidden md:block p-0 xl:px-5`} 
-            onKeyDown={(e) => toggleExpanded(e)} aria-expanded={ariaExpanded}
+            onKeyDown={(e) => toggleExpanded(e)} 
+            onClick={() => changeToggleState()} 
+            aria-expanded={ariaExpanded}
             >
             <div onMouseMove={resetToggle}>
                 {currentLanguage.name}

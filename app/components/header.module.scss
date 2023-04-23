@@ -3,4 +3,5 @@
 .header {
     background-color: $darkBlue;
     z-index: 100;
+    @apply p-0 xl:p-2;
 }
