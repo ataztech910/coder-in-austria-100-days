@@ -5,7 +5,7 @@ import RegistrationForm from './RegistrationForm';
 export default function HeroBanner() {
     const purpleFont = '';
     return(
-        <div className={styles.heroBanner}>
+        <div className={`${styles.heroBanner} bg-[url('/banner-bg.png')]`}>
             <div className={`content ${styles.heroBanner__layout}`}>
                 <div className={styles.heroBanner__layout__leftSide}>
                     <h1>Discover new product and best possibilities</h1>
