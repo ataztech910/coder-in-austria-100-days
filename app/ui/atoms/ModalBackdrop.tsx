@@ -3,7 +3,6 @@ export default function ModalBackdrop({ children, duration, state, onClick }: an
         transition: `background-color ${duration}ms ease-in-out, z-index ${duration}ms ease-in-out`,
         backgroundColor: "rgba(0, 0, 0, 0)",
         zIndex: -100,
-        display: 'none'
       };
     
     const transitionStyles: any = {
@@ -17,7 +16,7 @@ export default function ModalBackdrop({ children, duration, state, onClick }: an
                 ...defaultStyle,
                 ...transitionStyles[state]
             }}
-            className='modalBackdrop'
+            className={`modalBackdrop ${state === 'exited'? 'hidden' : ''}`}
             >
             {children}
     </div>
