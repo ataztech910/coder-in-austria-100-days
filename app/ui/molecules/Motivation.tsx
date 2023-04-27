@@ -1,25 +1,16 @@
 import styles from '@/app/ui/molecules/motivation.module.scss';
 import Card from '../atoms/Card';
 
-export default function Motivation() {
-    const cards: Array<ICard> = [
-        {
-            imageUrl: [
-                'card_1.png',
-                'card.png'
-            ],
-            title: 'Build as team',
-            description: 'Work as team with your mentor to achieve your personmal goal'
-        }
-    ];
+export default function Motivation(cards: any) {
     return(
         <div className={styles.motivation}>
             <div className='content'>
-                <h3>Turn yout motivation into colloboration</h3>
+                <h3>{cards?.fields?.title}</h3>
                 <div className={styles.motivation__cards}>
-                    <Card {...cards[0]} />
-                    <Card {...cards[0]} />
-                    <Card {...cards[0]} />
+                    {
+                        cards?.fields?.cards?.map((card: any) => 
+                            <div key={`card-${Math.floor(Math.random() * 100)}`} ><Card {...card.fields} /></div>)
+                    }
                 </div>
             </div>
         </div>

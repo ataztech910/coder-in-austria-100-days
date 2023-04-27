@@ -1,13 +1,13 @@
 import styles from '@/app/ui/molecules/statistics.module.scss';
 import Statistics from "./Statistics";
 
-export default function StatisticsLayout() {
+export default function StatisticsLayout(staisticsData: any) {
     return(
         <div className={styles.statisticsLayout}>
-            <h3>Home to your next coding goal</h3>
-            <p>Join our professional worldwide community</p>
+            <h3>{staisticsData?.fields?.title}</h3>
+            <p>{staisticsData?.fields?.description}</p>
             <div className='m-auto max-w-[fit-content]'>
-                <Statistics style={''} />
+                <Statistics {...staisticsData?.fields} />
             </div>
         </div> 
     );

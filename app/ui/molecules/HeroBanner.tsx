@@ -2,16 +2,27 @@ import styles from '@/app/ui/molecules/hero-banner.module.scss';
 import Statistics from './Statistics';
 import RegistrationForm from './RegistrationForm';
 
-export default function HeroBanner() {
-    const purpleFont = '';
+export default function HeroBanner(bannerData: any) {
     return(
-        <div className={`${styles.heroBanner} bg-[url('/banner-bg.png')]`}>
-            <div className={`content ${styles.heroBanner__layout}`}>
+        <div 
+            className={`${styles.heroBanner}`}
+            style={{
+                backgroundImage: `url(${bannerData.fields.backgroundImage.fields.file.url})`
+            }}
+        >
+            <div 
+                className={`content ${styles.heroBanner__layout}`}
+                style={{
+                    color: bannerData.fields.textColor
+                }}
+            >
                 <div className={styles.heroBanner__layout__leftSide}>
-                    <h1>Discover new product and best possibilities</h1>
-                    <p className={styles.heroBanner__layout__leftSide__text}>Coder in Austria it is a unique product to learn programming languages with explicit help of real mentors on demand</p>
+                    <h1>{bannerData.fields.title}</h1>
+                    <p className={styles.heroBanner__layout__leftSide__text}>
+                        {bannerData.fields.description.content[0].content[0].value}
+                    </p>
                     <hr />
-                    <Statistics style={purpleFont} />
+                    <Statistics {...bannerData.fields.statistics.fields} />
                 </div>
                 <div className={styles.heroBanner__layout__rightSide}>
                     <RegistrationForm />

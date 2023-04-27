@@ -16,15 +16,13 @@ async function getPageData () {
 
 export default function Home() {
   const data = use(getPageData());
-  console.log('loaded', data.fields.content[0]);
-  console.log('loaded', data.fields.content[0].sys.contentType.sys.id);
   return (
     <main >
-      <HeroBanner />
+      <HeroBanner {...data.fields.content[0]} />
       <FindYourMentor />
-      <Motivation />
-      <StatisticsLayout />
-      <Empower />
+      <Motivation {...data.fields.content[1]} />
+      <StatisticsLayout {...data.fields.content[2]} />
+      <Empower {...data.fields.content[3]} />
     </main>
   )
 }
