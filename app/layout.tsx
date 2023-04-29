@@ -1,6 +1,9 @@
 import Footer from './components/Footer'
 import Header from './components/Header'
 import './globals.scss'
+import { JetBrains_Mono } from 'next/font/google'
+
+const jetBrains = JetBrains_Mono({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Coder in Austria',
@@ -17,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className='scroll-smooth'>
-      <body>
+      <body className={jetBrains.className}>
         <Header />
         {children}
         <Footer />
