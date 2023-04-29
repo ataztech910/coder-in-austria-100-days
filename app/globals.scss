@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400;600&display=swap');
-
+@import './colors';
 body {
   font-family: 'JetBrains Mono', monospace;
   color: #fff;
@@ -48,4 +48,23 @@ svg {
   top: 0;
   height: 100%;
   width: 100%;
+}
+
+.red {
+  background-color: $red;
+  color: #fff;
+}
+
+.middleBlue {
+  background-color: $middleBlue;
+  color: $deepBlue;
+}
+
+.darkBlue {
+  background-color: $darkBlue;
+  color: #000;
+}
+
+.fa-xl {
+  max-height: 2rem !important;
 }

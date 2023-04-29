@@ -1,0 +1,51 @@
+@import '../../colors';
+
+.blogNavigation {
+    color: $darkGray;
+    &__popular {
+        @apply mb-8;
+        &__list {
+            &__item {
+                @apply flex mb-4;
+                border: 1px solid transparent;
+                transition: 0.2s;
+                &:hover {
+                    border-color: $darkGray;
+                }
+                &__image {
+                    @apply mr-4;
+                }
+                &__text {
+                    &__title {
+                        @apply mb-2;
+                        font-size: 12px;
+                        font-weight: bold;
+                    }
+                    &__date {
+                        font-size: 11px;
+                    }
+                }
+            }
+        }
+    }
+    &__categories {
+        @apply mb-8;
+        &__item {
+            @apply mb-2;
+            &__link {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    &__tags {
+        @apply mb-8;
+        ul {
+            li {
+                @apply mr-2;
+                display: inline-block;
+            }
+        }
+    }
+}

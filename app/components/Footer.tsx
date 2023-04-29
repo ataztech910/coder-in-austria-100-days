@@ -1,6 +1,6 @@
 import styles from '@/app/components/footer.module.scss';
 import Logo from '../ui/atoms/Logo';
-import BottomSeparator from '../ui/atoms/BottomSepaarator';
+import BottomSeparator from '../ui/atoms/BottomSeparator';
 import { faArrowRight, faMailBulk } from "@fortawesome/free-solid-svg-icons";
 import InputWithIcon from '../ui/atoms/InputWithIcon';
 

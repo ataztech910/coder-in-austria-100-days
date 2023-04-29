@@ -2,6 +2,7 @@
 @import '../../ui/atoms/input.module.scss';
 
 .link {
+    @apply min-w-[100px];
     border: 1px solid transparent;
     &:hover {
         border-color: #fff;
@@ -13,8 +14,8 @@
         position: relative;
         display: inline;
         white-space: nowrap;
-        @extend .link;
         z-index: 10;
+        @extend .link;
         &__childrenLayout {
             display: none;
             position: absolute;

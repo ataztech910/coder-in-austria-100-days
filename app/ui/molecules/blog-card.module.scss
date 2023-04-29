@@ -1,0 +1,21 @@
+@import '../../colors';
+
+.blogCard {
+    background-size: cover;
+    @apply block relative;
+    @apply max-w-none xl:max-w-[400px] min-h-[400px] p-5 mb-8 m-auto w-full;
+    transition: 0.09s;
+    &:hover {
+        filter: grayscale(70%);
+    }
+    &__title {
+        position: absolute;
+        bottom: 3rem;
+        &__text {
+            @apply mb-3;
+        }
+        &__date {
+            font-size: 12px;
+        }
+    }
+}

@@ -1,0 +1,9 @@
+@import '../../colors';
+
+.breadCrumb {
+    @apply flex my-5;
+    color: $darkGray;
+    &__separator {
+        @apply mx-2;
+    }
+}

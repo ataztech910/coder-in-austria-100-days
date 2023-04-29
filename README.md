@@ -27,8 +27,8 @@ This is a source code for the 100 days challenge. The rules for the challenge ar
 - Day 2. Create the content model in #contentful (main page, blog) ✅
 - Day 3. Create connection API for data and frontend ✅
 - Day 4. Create main page content and connect it with frontend ✅
-- Day 5. Create the mockup for blog page (list and article) ⌚
-- Day 6. Create the blog list page with mock data ⌚
+- Day 5. Create the mockup for blog page (list and article) ✅
+- Day 6. Create the blog list page with mock data ✅
 - Day 7. Create several blog articles for test ⌚
 - Day 8. Create E2E test for blog list page ⌚
 - Day 9. Create blog article page ⌚
