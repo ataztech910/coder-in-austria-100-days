@@ -1,0 +1,16 @@
+@import '../colors';
+
+.blog {
+    @apply mt-8 px-4;
+    h1 {
+        font-size: 36px;
+        color: $darkGray;
+        @apply mb-4;
+    }
+    &__recomended {
+        @apply block xl:flex gap-4;
+    }
+    &__blogContent {
+        @apply block xl:flex;
+    }
+}

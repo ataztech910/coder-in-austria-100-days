@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import BottomSeparator from '@/app/ui/atoms/BottomSepaarator';
+import BottomSeparator from '@/app/ui/atoms/BottomSeparator';
 
 const meta: Meta<typeof BottomSeparator> = {
   title: 'UI Library/Bottom separator',
@@ -13,4 +13,8 @@ const meta: Meta<typeof BottomSeparator> = {
 export default meta;
 type Story = StoryObj<typeof BottomSeparator>;
 
-export const Static: Story = {};
+export const Static: Story = {
+  args: {
+   isDark: false
+},
+};

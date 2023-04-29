@@ -1,0 +1,26 @@
+@import '../../colors';
+
+.blogArticleListItem {
+    @apply block xl:flex w-full;
+    &__image {
+        @apply w-full xl:w-[400px] min-h-[250px] xl:min-h-[50px] p-4 mr-4;
+        background-size: cover;
+    }
+    &__article {
+        color: #000;
+        @apply py-2 xl:p-0;
+        &__title {
+            font-size: 20px;
+            font-weight: bold;
+            @apply mb-4;
+        }
+        &__date {
+            font-size: 12px;
+            @apply mb-4;
+        }
+        &__text {
+            font-size: 14px;
+            @apply mb-4;
+        }
+    }
+}

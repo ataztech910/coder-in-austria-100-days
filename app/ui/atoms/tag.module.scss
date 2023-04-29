@@ -1,0 +1,9 @@
+@import '../../colors';
+
+.tag {
+    @apply p-3 max-w-[127px] text-center;
+    &--isSmall {
+        @apply p-1 max-w-[70px] text-center;
+        font-size: 10px;
+    }
+}
