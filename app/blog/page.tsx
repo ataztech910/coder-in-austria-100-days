@@ -3,6 +3,16 @@ import BlogCard from '../ui/molecules/BlogCard';
 import BreadCrumbs from '../ui/atoms/BreadCrumbs';
 import BlogArticleList from '../ui/molecules/BlogArticleList';
 import BlogNavigation from '../ui/molecules/BlogNavigation';
+import { use } from 'react';
+import { getPage } from '../utils/cocntentful';
+
+async function getPageData () {
+  return await getPage({
+   pageContentType: 'blogItem',
+   locale: 'en-US',
+   limit: 1000
+ }, false);
+}
 
 export const metadata = {
   title: 'Coder in Austria | Blog',
@@ -13,6 +23,9 @@ export const metadata = {
 }
 
 export default function Blog() {
+  const data = use(getPageData());
+  console.log(data);
+  
   const blogCard = {
     tag: {
       color: 'red',
