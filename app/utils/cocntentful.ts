@@ -8,20 +8,25 @@ const client = require('contentful').createClient({
 
 type GetPageParams = {
     pageContentType: string;
-    slug: string;
     locale: string;
+    slug?: string;
+    limit?: number;
 };
 
-async function getPage(params: GetPageParams) {
+async function getPage(params: GetPageParams, isSinglePage = true) {
     const query = {
-      limit: 1,
+      limit: params?.limit ?? 1,
       include: 10,
       locale: params.locale,
       'fields.slug': params.slug,
       content_type: params.pageContentType,
     };
-    const { items: [page] } = await client.getEntries(query);
-    return page || null;
+    if (isSinglePage) {
+      const { items: [page] } = await client.getEntries(query);
+      return page || null;
+    }
+    const { items } = await client.getEntries(query);
+    return items || null;
 };
 
 export { getPage };

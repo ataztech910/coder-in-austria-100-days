@@ -15,7 +15,7 @@ export default function BlogNavigation(blogNavigationData: any) {
     return(
         <div className={styles.blogNavigation}>
             <div className={styles.blogNavigation__popular}>
-                <h2>Recent posts</h2>
+                <h2>Popular posts</h2>
                 <BottomSeparator {...separatorConfig} />
                 <ul className={styles.blogNavigation__popular__list}>
                     { blogNavigationData?.popularBlogs?.map((item: any) => {
