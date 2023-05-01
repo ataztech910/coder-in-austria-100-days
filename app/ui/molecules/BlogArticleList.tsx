@@ -6,6 +6,8 @@ export default function BlogArticleList(blogListData: any) {
     const separatorConfig = {
         isDark: true
     }
+    console.log(blogListData);
+    
     return(
         <div className={styles.blogArticleList}>
             <h2>Recent posts</h2>

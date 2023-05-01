@@ -21,7 +21,7 @@ export default function RegistrationForm() {
     }
 
     return(
-        <div className={styles.registrationForm}>
+        <div className={styles.registrationForm} data-testid="registration">
            <div className={styles.registrationForm__title}>Join 1,000 mentors</div>
            <hr />
            <Input {...email} />

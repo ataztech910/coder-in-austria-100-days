@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function BlogCard(blogCardData: any) {
     return(
-        <Link href={blogCardData.url}
+        <Link href={`/blog/${blogCardData.slug}`}
             className={styles.blogCard}
             style={{
                 backgroundImage: `url(${blogCardData.image})`

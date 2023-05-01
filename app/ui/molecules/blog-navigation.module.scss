@@ -14,6 +14,10 @@
                 }
                 &__image {
                     @apply mr-4;
+                    width: 80px;
+                    img {
+                        max-width: initial !important;
+                    }
                 }
                 &__text {
                     &__title {

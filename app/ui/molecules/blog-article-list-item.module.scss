@@ -3,7 +3,7 @@
 .blogArticleListItem {
     @apply block xl:flex w-full;
     &__image {
-        @apply w-full xl:w-[400px] min-h-[250px] xl:min-h-[50px] p-4 mr-4;
+        @apply w-full xl:w-[400px] min-h-[250px] xl:min-h-[180px] p-4 mr-4 xl:max-w-[180px];
         background-size: cover;
     }
     &__article {

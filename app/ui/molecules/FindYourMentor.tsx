@@ -18,7 +18,7 @@ export default function FindYourMentor() {
     };
     
     return(
-        <div className={styles.findYourMentor}>
+        <div className={styles.findYourMentor} data-testid="findMentorSearch">
            <div className='content'>
             <h2>Find your mentor</h2>
             <div className={styles.findYourMentor__input}>

@@ -11,6 +11,8 @@
     &__title {
         position: absolute;
         bottom: 3rem;
+        background: rgba(255, 255, 255, 0.9);
+        color: black;
         &__text {
             @apply mb-3;
         }

@@ -9,7 +9,7 @@ import Sidebar from '../ui/molecules/Sidebar';
 
 export default function Header(user: any) {
     return(
-        <header className={`${styles.header} sticky top-0`}>
+        <header data-testid="header" className={`${styles.header} sticky top-0`}>
             <div className='flex items-center justify-between content'>
                 <Sidebar />
                 <Logo isResponsive={true} />

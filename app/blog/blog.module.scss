@@ -12,5 +12,8 @@
     }
     &__blogContent {
         @apply block xl:flex;
+        &__left {
+            @apply m-0 xl:mr-8;
+        }
     }
 }
