@@ -3,7 +3,7 @@ import Card from '../atoms/Card';
 
 export default function Motivation(cards: any) {
     return(
-        <div className={styles.motivation}>
+        <div className={styles.motivation} data-testid="motivationLayout">
             <div className='content'>
                 <h3>{cards?.fields?.title}</h3>
                 <div className={styles.motivation__cards}>

@@ -21,10 +21,10 @@ export default function BlogNavigation(blogNavigationData: any) {
                     { blogNavigationData?.popularBlogs?.map((item: any) => {
                         return (
                             <li key={item.id}>
-                                <Link href={item.url} className={styles.blogNavigation__popular__list__item}>
+                                <Link href={item.slug} className={styles.blogNavigation__popular__list__item}>
                                     <div className={styles.blogNavigation__popular__list__item__image}>
                                             <Image
-                                                src={item.image}
+                                                src={`https:${item.image}`}
                                                 alt={item.title}
                                                 width={80}
                                                 height={60} />

@@ -4,7 +4,8 @@ import BreadCrumbs from '../ui/atoms/BreadCrumbs';
 import BlogArticleList from '../ui/molecules/BlogArticleList';
 import BlogNavigation from '../ui/molecules/BlogNavigation';
 import { use } from 'react';
-import { getPage } from '../utils/cocntentful';
+import { getPage } from '../utils/contentful';
+import { popularBlogContent, recomendedBlogContent, rescentBlogContent } from '../utils/parseContent';
 
 async function getPageData () {
   return await getPage({
@@ -24,7 +25,10 @@ export const metadata = {
 
 export default function Blog() {
   const data = use(getPageData());
-  console.log(data);
+  // console.log(JSON.stringify(data));
+  const recomendedBlogData = recomendedBlogContent(data);
+  const rescentBlogData = { items: rescentBlogContent(data) };
+  const popularBlogData = popularBlogContent(data);
   
   const blogCard = {
     tag: {
@@ -53,29 +57,7 @@ export default function Blog() {
   };
 
   const blogNavigation = {
-    popularBlogs: [
-      {
-          image: '/popular_blog.png',
-          title: 'If you read one article about summer outfits read this one',
-          date: 'Dec 06, 2016',
-          url: '/blog/123',
-          id: '123'
-      },
-      {
-          image: '/popular_blog.png',
-          title: 'If you read one article about summer outfits read this one',
-          date: 'Dec 06, 2016',
-          url: '/blog/123',
-          id: '1234'
-      },
-      {
-          image: '/popular_blog.png',
-          title: 'If you read one article about summer outfits read this one',
-          date: 'Dec 06, 2016',
-          url: '/blog/123',
-          id: '1235'
-      }
-    ],
+    popularBlogs: popularBlogData,
     categories: [
       {
         title: 'Programming',
@@ -98,8 +80,8 @@ export default function Blog() {
         isSmall: true
       },
       {
-        title: 'MongoDB',
-        url: '/blog/tags/MongoDB',
+        title: 'Python',
+        url: '/blog/tags/Python',
         color: 'middleBlue',
         isSmall: true
       },
@@ -159,14 +141,14 @@ export default function Blog() {
         <BreadCrumbs {...breadCrumbs} />
         <h1>Blog</h1>
         <div className={styles.blog__recomended}>
-          <BlogCard {...blogCard}/>
-          <BlogCard {...blogCard}/>
-          <BlogCard {...blogCard}/>
+          <BlogCard {...recomendedBlogData[0]}/>
+          <BlogCard {...recomendedBlogData[1]}/>
+          <BlogCard {...recomendedBlogData[2]}/>
         </div>
 
         <div className={styles.blog__blogContent}>
           <div className={styles.blog__blogContent__left}>
-            <BlogArticleList {...blog} />
+            <BlogArticleList {...rescentBlogData} />
           </div>
           <div className={styles.blog__blogContent__right}>
             <BlogNavigation {...blogNavigation} />

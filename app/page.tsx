@@ -4,7 +4,7 @@ import FindYourMentor from './ui/molecules/FindYourMentor'
 import HeroBanner from './ui/molecules/HeroBanner'
 import Motivation from './ui/molecules/Motivation'
 import StatisticsLayout from './ui/molecules/StatisticsLayout'
-import { getPage } from './utils/cocntentful'
+import { getPage } from './utils/contentful'
 
 async function getPageData () {
    return await getPage({
@@ -15,14 +15,14 @@ async function getPageData () {
 }
 
 export default function Home() {
-  const data = use(getPageData());
+  const data = typeof use === 'function'? use(getPageData()) : {};
   return (
     <main >
-      <HeroBanner {...data.fields.content[0]} />
+      <HeroBanner {...data?.fields?.content[0]} />
       <FindYourMentor />
-      <Motivation {...data.fields.content[1]} />
-      <StatisticsLayout {...data.fields.content[2]} />
-      <Empower {...data.fields.content[3]} />
+      <Motivation {...data?.fields?.content[1]} />
+      <StatisticsLayout {...data?.fields?.content[2]} />
+      <Empower {...data?.fields?.content[3]} />
     </main>
   )
 }
