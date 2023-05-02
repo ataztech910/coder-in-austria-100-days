@@ -19,11 +19,15 @@ export default function BlogArticleListItem(blogCardData: any) {
             </div>
 
             <div className={styles.blogArticleListItem__article}>
-                <div className={styles.blogArticleListItem__article__title}>{blogCardData.title}</div>
+                <div className={styles.blogArticleListItem__article__title}>
+                    <Link href={`/blog/${blogCardData.slug}`}>
+                        {blogCardData.title}
+                    </Link>
+                </div>
                 <div className={styles.blogArticleListItem__article__date}>{blogCardData.date}</div>
                 <div className={styles.blogArticleListItem__article__text}>{blogCardData.text}...</div>
                 <div className={styles.blogArticleListItem__article__readMore}>
-                    <Link href={blogCardData.slug}>
+                    <Link href={`/blog/${blogCardData.slug}`} tabIndex={-1}>
                         Read more
                         <FontAwesomeIcon icon={faAngleDoubleRight} className="fa fa-angles-right ml-2" color="black" />
                     </Link>
