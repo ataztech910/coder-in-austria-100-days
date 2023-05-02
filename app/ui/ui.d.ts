@@ -59,3 +59,7 @@ interface IContentfulData {
     },
     fields: Partial<any>
 }
+
+interface IPageProps {
+    params: { slug: string };
+}

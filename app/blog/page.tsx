@@ -25,23 +25,10 @@ export const metadata = {
 
 export default function Blog() {
   const data = use(getPageData());
-  // console.log(JSON.stringify(data));
   const recomendedBlogData = recomendedBlogContent(data);
   const rescentBlogData = { items: rescentBlogContent(data) };
   const popularBlogData = popularBlogContent(data);
   
-  const blogCard = {
-    tag: {
-      color: 'red',
-      isSmall: false,
-      title: 'JS'
-    },
-    title: 'Lorem ipsum Lorem ipsum Lorem ipsum ',
-    date: 'Dec 06, 2023',
-    image: 'blog_card.png',
-    url: '/blog/123'
-  };
-
   const breadCrumbs = {
     items: [
       {

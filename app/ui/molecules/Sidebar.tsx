@@ -58,7 +58,7 @@ export default function Sidebar() {
                                     <div className={styles.sidebar__layout__menu__content__logo}>
                                         <Image
                                             className={`mt-1`}
-                                            src="Logo--black.svg"
+                                            src="/Logo--black.svg"
                                             alt="Coder in Austria"
                                             width={200}
                                             height={67} />

@@ -1,0 +1,41 @@
+@import '../../colors';
+
+.blogItem {
+    @apply px-4 block xl:flex justify-between;
+    color: $darkGray;
+    h1 {
+        color: $darkGray;
+        font-size: 40px;
+        @apply mt-8;
+    }
+    &__left {
+        @apply min-w-[100%] xl:min-w-[65%] mb-8 max-w-[65%];
+        &__date {
+            @apply mt-4;
+            font-size: 12px;
+        }
+        &__image {
+            @apply mb-8;
+            height: 300px;
+        }
+        &__content {
+            color: $darkGray;
+            p {
+                @apply my-4;
+            }
+            hr {
+                @apply my-4;
+            }
+            h2 {
+                font-size: 20px;
+                font-weight: bold;
+            }
+        }
+    }
+    &__right {
+        @apply max-w-[100%] xl:max-w-[30%];
+        position: sticky;
+        max-height: 800px;
+        top: 6rem;
+    }
+}

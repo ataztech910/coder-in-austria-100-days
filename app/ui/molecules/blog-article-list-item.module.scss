@@ -22,5 +22,10 @@
             font-size: 14px;
             @apply mb-4;
         }
+        a {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 }
