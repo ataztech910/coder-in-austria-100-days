@@ -32,4 +32,4 @@ This is a source code for the 100 days challenge. The rules for the challenge ar
 - Day 7. Create several blog articles for test ✅
 - Day 8. Create E2E test for blog list page ✅
 - Day 9. Create blog article page ✅
-- Day 10. Create E2E test for article page ⌚
+- Day 10. Create E2E test for article page ✅
