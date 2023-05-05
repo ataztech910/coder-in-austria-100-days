@@ -21,3 +21,15 @@ This is a source code for the 100 days challenge. The rules for the challenge ar
 - Day 9. E2E test for Header and Footer ✅
 - Day 10. Main page component with mock data ⌚
 - Day 11. E2E test for main page ⌚
+
+### Sprint 3/10:
+- Day 1. Create the course page UI ⌚
+- Day 2. Create the lessons page UI ⌚
+- Day 3. Create after lesson group questionnaire page UI ⌚
+- Day 4. Create after course questionnaire page UI ⌚
+- Day 5. Create the course, lessons and questionnaire  page data model in #contentful ⌚
+- Day 6. Fill the mock data in #contentful ⌚
+- Day 7. Create the course page ⌚
+- Day 8. Create connect the course page with data ⌚
+- Day 9. Create E2E for course page ⌚
+- Day 10. Sprint review and planning ⌚
