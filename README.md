@@ -37,7 +37,7 @@ This is a source code for the 100 days challenge. The rules for the challenge ar
 
 ### Sprint 3/10:
 - Day 1. Create the course page UI ✅
-- Day 2. Create the lessons page UI ⌚
+- Day 2. Create the lessons page UI ✅
 - Day 3. Create after lesson group questionnaire page UI ⌚
 - Day 4. Create after course questionnaire page UI ⌚
 - Day 5. Create the course, lessons and questionnaire  page data model in #contentful ⌚
