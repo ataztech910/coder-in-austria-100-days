@@ -143,3 +143,22 @@
         border-color: $inputGray;
     }
 }
+
+.startCourse {
+    @apply p-5 mt-8;
+    @extend .button;
+    @extend .buttonWithHover;
+    @extend .blueButton;
+    position: relative;
+    &::before {}
+    &::after {
+        left: 85%;
+        top: 2px;
+    }
+    &:hover {
+        &::after {
+            top: 1px;
+            left: 85%;
+        }
+    }
+}

@@ -1,0 +1,15 @@
+@import '../../colors';
+@import '../../ui/atoms/input.module.scss';
+
+.courseHeader {
+    @apply p-4 xl:p-20 xl:max-w-[800px] m-auto;
+    display: block;
+    text-align: center;
+    h1 {
+        color: $darkPurple;
+        font-size: 40px;
+    }
+    button {
+        @extend .startCourse;
+    }
+}

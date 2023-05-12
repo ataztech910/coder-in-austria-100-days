@@ -63,3 +63,20 @@ interface IContentfulData {
 interface IPageProps {
     params: { slug: string };
 }
+
+interface IHeaderData {
+    title: string;
+    image: string;
+}
+
+interface ILesson {
+    icon: boolean;
+    title: string;
+    link: string;
+    status: boolean;
+}
+
+interface ILessonModule {
+    title: string;
+    lessons: ILesson[];
+}

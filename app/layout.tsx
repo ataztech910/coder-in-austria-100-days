@@ -1,7 +1,7 @@
-import Footer from './components/Footer'
-import Header from './components/Header'
 import './globals.scss'
 import { JetBrains_Mono } from 'next/font/google'
+import Header from './ui/organisms/Header'
+import Footer from './ui/organisms/Footer'
 
 const jetBrains = JetBrains_Mono({ subsets: ['latin'] })
 

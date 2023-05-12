@@ -1,8 +1,8 @@
-import styles from '@/app/components/footer.module.scss';
-import Logo from '../ui/atoms/Logo';
-import BottomSeparator from '../ui/atoms/BottomSeparator';
+import styles from '@/app/ui/organisms/footer.module.scss';
 import { faArrowRight, faMailBulk } from "@fortawesome/free-solid-svg-icons";
-import InputWithIcon from '../ui/atoms/InputWithIcon';
+import BottomSeparator from '../atoms/BottomSeparator';
+import InputWithIcon from '../atoms/InputWithIcon';
+import Logo from '../atoms/Logo';
 
 export default function Footer() {
     const menuElements: Array<IMenuElement> = [

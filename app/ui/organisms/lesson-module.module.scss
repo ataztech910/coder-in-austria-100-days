@@ -1,0 +1,11 @@
+@import '../../colors';
+
+.courseHeader {
+    h2 {
+        @apply max-w-[100%] xl:max-w-[410px];
+        color: $darkGray;
+        text-transform: uppercase;
+        line-height: 2;
+        border-bottom: 1px solid $underlineGray;
+    }
+}
