@@ -24,10 +24,10 @@ export const metadata = {
 }
 
 export default function Blog() {
-  const data = use(getPageData());
-  const recomendedBlogData = recomendedBlogContent(data);
-  const rescentBlogData = { items: rescentBlogContent(data) };
-  const popularBlogData = popularBlogContent(data);
+  const data = use && use(getPageData());
+  const recomendedBlogData = data && recomendedBlogContent(data);
+  const rescentBlogData = data && { items: rescentBlogContent(data) };
+  const popularBlogData = data && popularBlogContent(data);
   
   const breadCrumbs = {
     items: [
@@ -127,20 +127,24 @@ export default function Blog() {
       <div className={`${styles.blog} content`}>
         <BreadCrumbs {...breadCrumbs} />
         <h1>Blog</h1>
-        <div className={styles.blog__recomended}>
-          <BlogCard {...recomendedBlogData[0]}/>
-          <BlogCard {...recomendedBlogData[1]}/>
-          <BlogCard {...recomendedBlogData[2]}/>
-        </div>
+        {data && 
+        <>
+          <div className={styles.blog__recomended}>
+            <BlogCard {...recomendedBlogData[0]}/>
+            <BlogCard {...recomendedBlogData[1]}/>
+            <BlogCard {...recomendedBlogData[2]}/>
+          </div>
 
-        <div className={styles.blog__blogContent}>
-          <div className={styles.blog__blogContent__left}>
-            <BlogArticleList {...rescentBlogData} />
+          <div className={styles.blog__blogContent}>
+            <div className={styles.blog__blogContent__left}>
+              <BlogArticleList {...rescentBlogData} />
+            </div>
+            <div className={styles.blog__blogContent__right}>
+              <BlogNavigation {...blogNavigation} />
+            </div>
           </div>
-          <div className={styles.blog__blogContent__right}>
-            <BlogNavigation {...blogNavigation} />
-          </div>
-        </div>
+        </>
+        }
       </div>
     </main>
   )

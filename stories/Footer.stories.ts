@@ -1,4 +1,4 @@
-import Footer from '@/app/components/Footer';
+import Footer from '@/app/ui/organisms/Footer';
 import type { Meta, StoryObj } from '@storybook/react';
 import { within, userEvent } from '@storybook/testing-library';
 

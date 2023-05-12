@@ -1,0 +1,14 @@
+@import '../../colors';
+
+.lesson {
+   &__line {
+    @apply flex gap-x-8 p-2 max-w-[100%] xl:max-w-[410px] justify-between;
+    color: $darkGray;
+    &:hover {
+        background-color: $iconLightGray;
+    }
+    &__title {
+        @apply xl:min-w-[300px];
+    }
+   }
+}

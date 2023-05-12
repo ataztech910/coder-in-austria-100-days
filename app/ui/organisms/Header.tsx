@@ -1,11 +1,11 @@
-import styles from '@/app/components/header.module.scss';
-import TopMenu from '../ui/molecules/TopMenu';
-import TopSearch from '../ui/molecules/TopSearch';
-import LanguageSelector from '../ui/molecules/LanguageSelector';
-import Login from '../ui/molecules/Login';
-import Separator from '../ui/atoms/Separator';
-import Logo from '../ui/atoms/Logo';
-import Sidebar from '../ui/molecules/Sidebar';
+import styles from '@/app/ui/organisms/header.module.scss';
+import Logo from '../atoms/Logo';
+import Separator from '../atoms/Separator';
+import LanguageSelector from '../molecules/LanguageSelector';
+import Login from '../molecules/Login';
+import Sidebar from '../molecules/Sidebar';
+import TopMenu from '../molecules/TopMenu';
+import TopSearch from '../molecules/TopSearch';
 
 export default function Header(user: any) {
     return(

@@ -1,7 +1,7 @@
-import Header from '@/app/components/Header';
 import type { Meta, StoryObj } from '@storybook/react';
 import '@/app/globals.scss';
 import { within, userEvent } from '@storybook/testing-library';
+import Header from '@/app/ui/organisms/Header';
 
 const meta: Meta<typeof Header> = {
   title: 'UI Library/Header',
