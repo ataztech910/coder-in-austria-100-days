@@ -84,7 +84,6 @@ export default function BlogItem(props: IPageProps) {
     const data = use(getPageData(props.params.slug));
     const blogData = use(getBlogData());
     const popularBlogData = popularBlogContent(blogData);
-    console.log(data[0]);
     const date = new Date(data[0].sys.updatedAt);
     const [month, year] = [
         date.getDate(),

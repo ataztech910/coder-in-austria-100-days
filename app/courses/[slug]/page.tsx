@@ -2,73 +2,58 @@ import styles from '@/app/courses/[slug]/course-item.module.scss';
 import CourseHeader from '@/app/ui/molecules/CourseHeader';
 import LessonsModule from '@/app/ui/organisms/LessonsModule';
 import Image from 'next/image';
+import ContentfulStrategy from './contentful-strategy';
+import CourseStrategyContext from './course-strategy-context';
+import { use } from 'react';
+import { Metadata, ResolvingMetadata } from 'next';
+
+async function getPageData (slug: string) {
+    const strategy = new CourseStrategyContext(new ContentfulStrategy());
+    return await strategy.getCourseFromAPI(slug);
+};
+
+
+type Props = {
+    params: { id: string };
+    searchParams: { [key: string]: string | string[] | undefined };
+  };
+
+export async function generateMetadata( { params, searchParams }: any) {
+    const id = params.id;
+    const courseData = await getPageData(id);
+    return {
+      title: `Coder in Austris | Courses | ${courseData.courseName}`,
+    };
+  }
 
 export default function CourseItem(props: IPageProps) {
-    console.log(props.params.slug);
+    
+    const courseData = use && use(getPageData(props.params.slug));
     const bannerData = {
         fields: {
-            title: 'Basic informatics and computer science',
-            image: '/banner-bg.png'
+            title: courseData.courseName,
+            image: courseData.topImage
         }
     };
-    const courseData = {
-        textBefore: 'To begin this course, choose START COURSE. To advance to a specific topic, choose from the following lesson titles. For more information about how to use this course, choose How to Use This Course.',
-        lessonsModules: [{
-            title: 'Lessons module',
-            lessons: [
-                {
-                    title: 'Start the course header',
-                    status: false,
-                    link: '#',
-                    icon: true,
-                },
-                {
-                    title: 'Start the course header',
-                    status: false,
-                    link: '#',
-                    icon: true,
-                }
-            ]
-        },
-        {
-            title: 'Lessons module',
-            lessons: [
-                {
-                    title: 'Start the course header',
-                    status: false,
-                    link: '#',
-                    icon: true,
-                },
-                {
-                    title: 'Start the course header',
-                    status: false,
-                    link: '#',
-                    icon: true,
-                }
-            ]
-        }
-    ],
-        textAfter: 'To begin this course, choose START COURSE. To advance to a specific topic, choose from the following lesson titles. For more information about how to use this course, choose How to Use This Course.',
-        description: {
-            image: '/card.png',
-            title: 'Basics informatics',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-        }
-    };
+
+    const metadata = {
+       title:  `Coder in Austria | Course | ${courseData.courseName}`
+    }
+
 
     return (
         <div  className={`${styles.courseItem}`}>
             <CourseHeader  {...bannerData.fields}/>
             <div className={`${styles.courseItem__courseData} content`}>
                 <p>
-                    {courseData.textBefore}
+                    {courseData.preText}
                 </p>
             </div>
             <div className={`${styles.courseItem__lessonsModule} content p-4 xl:p-0`}>
-                {courseData.lessonsModules.map((lesson) => {
+                {courseData.modules.map((module) => {
                     return (
-                        <div className='mb-8' key={lesson.title}>
-                            <LessonsModule {...lesson} />
+                        <div className='mb-8' key={module.slug}>
+                            <LessonsModule {...module} />
                         </div>
                     )
                 })}
@@ -76,21 +61,21 @@ export default function CourseItem(props: IPageProps) {
             </div>
             <div className={`${styles.courseItem__courseData} content`}>
                 <p>
-                    {courseData.textAfter}
+                    {courseData.postText}
                 </p>
             </div>
             <div className={`${styles.courseItem__courseData} content`}>
                 <div className='block xl:flex mb-0 xl:mb-8 p-4 xl:p-0'>
                     <div className={styles.courseItem__descriptionImage}>
                                 <Image
-                                    src={`${courseData.description.image}`}
-                                    alt={courseData.description.title}
+                                    src={`https:${courseData.bottomCourseImage}`}
+                                    alt={courseData.bottomTitle}
                                     width={200}
                                     height={200} />
                     </div>
                     <div className={styles.courseItem__description}>
-                        <h2>{courseData.description.title}</h2>
-                        <p>{courseData.description.text}</p>
+                        <h2>{courseData.bottomTitle}</h2>
+                        <p>{courseData.bottomText}</p>
                     </div>
                 </div>
                 <div className={styles.courseItem__startCourse}>
