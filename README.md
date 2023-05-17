@@ -43,6 +43,6 @@ This is a source code for the 100 days challenge. The rules for the challenge ar
 - Day 5. Create the course, lessons and questionnaire  page data model in #contentful ✅
 - Day 6. Fill the mock data in #contentful ✅
 - Day 7. Create the course page ✅
-- Day 8. Create connect the course page with data ⌚
-- Day 9. Create E2E for course page ⌚
+- Day 8. Create connect the course page with data ✅
+- Day 9. Create E2E for course page ✅
 - Day 10. Sprint review and planning ⌚
