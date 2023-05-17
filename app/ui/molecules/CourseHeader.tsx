@@ -4,7 +4,7 @@ export default function CourseHeader(header: IHeaderData) {
     return(
         <div 
             style={{
-                backgroundImage: `url(${header.image})`,
+                backgroundImage: `url(https:${header.image})`,
                 backgroundSize: 'cover'
             }}
         >

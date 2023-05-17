@@ -72,11 +72,44 @@ interface IHeaderData {
 interface ILesson {
     icon: boolean;
     title: string;
-    link: string;
-    status: boolean;
+    slug: string;
+    status?: boolean;
 }
 
-interface ILessonModule {
-    title: string;
-    lessons: ILesson[];
+interface IAnswer {
+    answerText: string;
+    isCorrect: boolean;
 }
+
+interface IQuestion {
+    question: string;
+    answers: IAnswer[];
+}
+
+interface IQuestionaire {
+    title: string;
+    slug: string;
+    preText?: string;
+    questions?: IQuestion[];
+    afterText?: string;
+}
+
+interface ICourseModule {
+    title: string;
+    slug: string;
+    lessons?: ILesson[];
+    questionaire?: IQuestionaire;
+}
+
+interface ICourse {
+    topImage: string;
+    slug: string;
+    courseName: string;
+    preText: string;
+    modules: ICourseModule[];
+    postText: string;
+    questionaire: IQuestionaire;
+    bottomCourseImage: string;
+    bottomTitle: string;
+    bottomText: string;
+};

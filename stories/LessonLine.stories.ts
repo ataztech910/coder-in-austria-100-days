@@ -20,7 +20,7 @@ export const Static: Story = {
   args: {
     title: 'Start the course header',
     status: false,
-    link: '#',
+    slug: '#',
     icon: true,
   },
 };

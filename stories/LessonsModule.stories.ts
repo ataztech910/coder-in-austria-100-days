@@ -23,13 +23,13 @@ export const Static: Story = {
         {
             title: 'Start the course header',
             status: false,
-            link: '#',
+            slug: '#',
             icon: true,
         },
         {
             title: 'Start the course header',
             status: false,
-            link: '#',
+            slug: '#',
             icon: true,
         }
     ]

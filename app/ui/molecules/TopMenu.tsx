@@ -13,13 +13,9 @@ export default function TopMenu() {
             name: 'Courses',
             children: [
                 {
-                    link: '/courses/beginner',
-                    name: 'Computer science. Beginner'
+                    link: '/courses/basic-informatics-and-computer-science',
+                    name: 'Basic informatics and computer science'
                 },
-                {
-                    link: '/courses/advanced',
-                    name: 'Computer science. Advanced'
-                }
             ]
         },
         {
