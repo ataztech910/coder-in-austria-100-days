@@ -48,7 +48,7 @@ This is a source code for the 100 days challenge. The rules for the challenge ar
 - Day 10. Sprint review and planning ✅
 
 ### Sprint 4/10
-- Day 1. Create the login page and form design ⌚
+- Day 1. Create the login page and form design ✅
 - Day 2. Create the registration page and form design ⌚
 - Day 3. Create the login page without connection to Amazon Web Services (AWS) ⌚
 - Day 4. Create the user model in Amazon Web Services (AWS) ⌚
