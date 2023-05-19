@@ -7,7 +7,7 @@ import StatisticsLayout from './ui/molecules/StatisticsLayout'
 import { getPage } from './utils/contentful'
 
 async function getPageData () {
-   return await getPage({
+  return await getPage({
     pageContentType: 'page',
     slug: 'mainPage',
     locale: 'en-US',
