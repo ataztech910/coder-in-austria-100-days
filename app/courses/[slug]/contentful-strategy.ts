@@ -14,6 +14,6 @@ export default class ContentfulStrategy implements ICourseStrategy {
 
     async getCourse(slug: string): Promise<ICourse> {
         const data = await this.getFromContentful(slug);
-        return await builder(data[0]);
+        return builder(data[0]);
     }
 }
