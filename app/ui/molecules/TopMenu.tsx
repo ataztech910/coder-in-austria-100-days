@@ -24,7 +24,7 @@ export default function TopMenu() {
         }
     ];
     const renderMenu = menuElements.map((menuItem: IMenuElement) => <MenuElement key={menuItem.link} {...menuItem} />);
-           
+
     return(
         <nav aria-label="Main" className={`flex hidden lg:block ${styles.topMenu}`}>
             <ul>{renderMenu}</ul>

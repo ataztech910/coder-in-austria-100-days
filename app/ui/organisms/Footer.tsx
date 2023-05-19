@@ -51,7 +51,7 @@ export default function Footer() {
                         <BottomSeparator />
                         <ul className='p-0 m-0'>{renderMenu}</ul>
                     </div>
-                    <div className='mt-10 xl:mt-0 min-w-[0px] xl:min-w-[500px]'>
+                    <div data-testid="subscribe" className='mt-10 xl:mt-0 min-w-[0px] xl:min-w-[500px]'>
                         <h5>Subscribe</h5>
                         <BottomSeparator />
                         <InputWithIcon {...inputParams} />

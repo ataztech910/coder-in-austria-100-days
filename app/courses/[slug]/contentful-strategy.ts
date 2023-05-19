@@ -9,7 +9,7 @@ export default class ContentfulStrategy implements ICourseStrategy {
             locale: 'en-US',
             limit: 1000,
             slug
-          }, false);
+    }, false);
     }
 
     async getCourse(slug: string): Promise<ICourse> {

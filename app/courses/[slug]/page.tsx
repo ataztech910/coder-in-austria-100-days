@@ -5,26 +5,24 @@ import Image from 'next/image';
 import ContentfulStrategy from './contentful-strategy';
 import CourseStrategyContext from './course-strategy-context';
 import { use } from 'react';
-import { Metadata, ResolvingMetadata } from 'next';
 
 async function getPageData (slug: string) {
     const strategy = new CourseStrategyContext(new ContentfulStrategy());
     return await strategy.getCourseFromAPI(slug);
 };
 
-
 type Props = {
     params: { id: string };
     searchParams: { [key: string]: string | string[] | undefined };
-  };
+};
 
 export async function generateMetadata( { params, searchParams }: any) {
     const id = params.id;
     const courseData = await getPageData(id);
     return {
-      title: `Coder in Austris | Courses | ${courseData.courseName}`,
+        title: `Coder in Austris | Courses | ${courseData.courseName}`,
     };
-  }
+}
 
 export default function CourseItem(props: IPageProps) {
     
@@ -37,7 +35,7 @@ export default function CourseItem(props: IPageProps) {
     };
 
     const metadata = {
-       title:  `Coder in Austria | Course | ${courseData.courseName}`
+        title:  `Coder in Austria | Course | ${courseData.courseName}`
     }
 
 
