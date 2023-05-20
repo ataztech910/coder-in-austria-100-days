@@ -18,6 +18,7 @@ interface IInput {
     additionalClasses?: string;
     leftIcon?: IIcon;
     rightIcon?: IIcon;
+    showRules?: boolean;
 }
 
 interface ICard {

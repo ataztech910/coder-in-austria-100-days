@@ -21,9 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" className='scroll-smooth'>
       <body className={jetBrains.className}>
-        <Header />
         {children}
-        <Footer />
       </body>
     </html>
   )

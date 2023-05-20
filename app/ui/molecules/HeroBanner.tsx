@@ -4,6 +4,9 @@ import RegistrationForm from './RegistrationForm';
 import React from 'react';
 
 export default function HeroBanner(bannerData: any) {
+    const formParams = {
+        header: 'Join 1,000 mentors'
+    }
     return(
         <div 
             data-testid="heroBaner"
@@ -29,7 +32,7 @@ export default function HeroBanner(bannerData: any) {
                     </span>
                 </div>
                 <div className={styles.heroBanner__layout__rightSide}>
-                    <RegistrationForm />
+                    <RegistrationForm {...formParams} />
                 </div>
             </div>
         </div>    
