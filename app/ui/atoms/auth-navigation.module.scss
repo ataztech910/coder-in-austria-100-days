@@ -1,0 +1,12 @@
+@import '../../colors';
+
+.authNavigation {
+    @apply mt-6;
+    text-align: center;
+    a {
+        color: $darkBlue;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

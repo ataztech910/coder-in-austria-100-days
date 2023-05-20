@@ -7,7 +7,7 @@ export default function Input(inputParams: IInput) {
                 <div className={styles.input__title}>{inputParams.title}</div>
                 <div className={styles.input__item}><input type={inputParams.type} placeholder={inputParams.placeholder} /></div>
                 {
-                    inputParams.type === 'password' && 
+                    inputParams.type === 'password' && inputParams.showRules && 
                     <ul className={styles.input__item__password}>
                         <li>Minimum 8 characters</li>
                         <li>Include at least one lowercase letter (a-z)</li>

@@ -6,6 +6,7 @@ import BlogNavigation from '../ui/molecules/BlogNavigation';
 import { use } from 'react';
 import { getPage } from '../utils/contentful';
 import { popularBlogContent, recomendedBlogContent, rescentBlogContent } from '../utils/parseContent';
+import PageLayout from '../page-layout';
 
 async function getPageData () {
   return await getPage({
@@ -82,29 +83,31 @@ export default function Blog() {
   }
 
   return (
-    <main>
-      <div className={`${styles.blog} content`}>
-        <BreadCrumbs {...breadCrumbs} />
-        <h1>Blog</h1>
-        {data && 
-        <>
-          <div className={styles.blog__recomended}>
-            <BlogCard {...recomendedBlogData[0]}/>
-            <BlogCard {...recomendedBlogData[1]}/>
-            <BlogCard {...recomendedBlogData[2]}/>
-          </div>
+    <PageLayout>
+      <main>
+        <div className={`${styles.blog} content`}>
+          <BreadCrumbs {...breadCrumbs} />
+          <h1>Blog</h1>
+          {data && 
+          <>
+            <div className={styles.blog__recomended}>
+              <BlogCard {...recomendedBlogData[0]}/>
+              <BlogCard {...recomendedBlogData[1]}/>
+              <BlogCard {...recomendedBlogData[2]}/>
+            </div>
 
-          <div className={styles.blog__blogContent}>
-            <div className={styles.blog__blogContent__left}>
-              <BlogArticleList {...rescentBlogData} />
+            <div className={styles.blog__blogContent}>
+              <div className={styles.blog__blogContent__left}>
+                <BlogArticleList {...rescentBlogData} />
+              </div>
+              <div className={styles.blog__blogContent__right}>
+                <BlogNavigation {...blogNavigation} />
+              </div>
             </div>
-            <div className={styles.blog__blogContent__right}>
-              <BlogNavigation {...blogNavigation} />
-            </div>
-          </div>
-        </>
-        }
-      </div>
-    </main>
+          </>
+          }
+        </div>
+      </main>
+    </PageLayout>
   )
 }

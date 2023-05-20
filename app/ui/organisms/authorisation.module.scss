@@ -1,0 +1,36 @@
+@import '../../colors';
+
+.authorisation {
+    height: 100vh;
+    width: 100%;
+    background-image: url('/auth-bg.png');
+    background-size: cover;
+    &__middleBlock {
+        @apply translate-y-[-50%] top-[50%] max-w-[1024px] m-auto block md:flex justify-between content-center rounded-none md:rounded-3xl;
+        position: relative;
+        width: 100%;
+        background: $white;
+        color: $darkGray;
+        &__left, &__right {
+            @apply p-4 md:p-10 w-[100%] md:w-[50%];
+        }
+        &__left {
+            @apply rounded-none md:rounded-l-3xl text-center md:text-left;
+            background-color: $darkBlue;
+            color: $white;
+            h1 {
+                @apply my-8;
+                font-weight: bold;
+                font-size: 30px;
+                line-height: 1.2;
+            }
+            &__image {
+                @apply mt-12 hidden md:block;
+                margin-bottom: -40px;
+            }
+        }
+        &__right {
+            @apply m-auto;
+        }
+    }
+}
