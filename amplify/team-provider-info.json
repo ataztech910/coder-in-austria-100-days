@@ -1,0 +1,23 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-coderinaustria-staging-202920-authRole",
+      "UnauthRoleArn": "arn:aws:iam::739635899518:role/amplify-coderinaustria-staging-202920-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::739635899518:role/amplify-coderinaustria-staging-202920-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-coderinaustria-staging-202920-deployment",
+      "UnauthRoleName": "amplify-coderinaustria-staging-202920-unauthRole",
+      "StackName": "amplify-coderinaustria-staging-202920",
+      "StackId": "arn:aws:cloudformation:eu-central-1:739635899518:stack/amplify-coderinaustria-staging-202920/2a8bb000-f816-11ed-bcc7-02d27e06a34c",
+      "AmplifyAppId": "dspc6ziksrtj0"
+    },
+    "categories": {
+      "auth": {
+        "CoderInAustria": {}
+      },
+      "storage": {
+        "s3coderinaustriastorage06af4fa5": {}
+      }
+    }
+  }
+}

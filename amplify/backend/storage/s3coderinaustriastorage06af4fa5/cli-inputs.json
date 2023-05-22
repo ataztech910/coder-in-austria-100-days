@@ -1,0 +1,12 @@
+{
+  "resourceName": "s3coderinaustriastorage06af4fa5",
+  "bucketName": "coderinaustria-storage-06af4fa5",
+  "policyUUID": "60f7cb4c",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ]
+}
