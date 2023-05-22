@@ -51,7 +51,7 @@ This is a source code for the 100 days challenge. The rules for the challenge ar
 - Day 1. Create the login page and form design ✅
 - Day 2. Create the registration page and form design ✅
 - Day 3. Create the login/registration page without connection to Amazon Web Services (AWS) ✅
-- Day 4. Create the user model in Amazon Web Services (AWS) ⌚
+- Day 4. Create the user model in Amazon Web Services (AWS) ✅
 - Day 5. Create the connection to AWS in the web app ⌚
 - Day 6. Connect the login page to Amazon Web Services (AWS) ⌚
 - Day 7. Connect the registration page to Amazon Web Services (AWS) ⌚
