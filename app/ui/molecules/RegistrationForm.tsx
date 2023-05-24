@@ -34,9 +34,8 @@ export default function RegistrationForm(formParams: any) {
         type: 'submit',
     }
 
-    async function signIn({username, password}: {username: string, password: string}) {
-        console.log(username);
-        console.log(password);
+    async function signIn(params?: any) {
+        const {username, password} = params;
         try {
             await Auth.signIn(username, password);
             console.log('authorised');
