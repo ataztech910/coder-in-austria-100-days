@@ -1,9 +1,12 @@
+'use client';
 import styles from '@/app/ui/atoms/input.module.scss';
 
-export default function Button(inputParams: IInput) {
+export default function Button(props: any) {
+    const { inputParams, callBack } = props;
+
     return(
         <>
-            <button className={styles.formButton}>{inputParams.title}</button>
+            <button type={inputParams.type} onClick={callBack} className={styles.formButton}>{inputParams.title}</button>
         </>
     );
 }

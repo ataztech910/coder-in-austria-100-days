@@ -1,11 +1,14 @@
 import styles from '@/app/ui/atoms/input.module.scss';
 
-export default function Input(inputParams: IInput) {
+export default function Input(props: any) {
+    const {inputParams, reference} = props;
     return(
         <>
             <div className={styles.input}>
                 <div className={styles.input__title}>{inputParams.title}</div>
-                <div className={styles.input__item}><input type={inputParams.type} placeholder={inputParams.placeholder} /></div>
+                <div className={styles.input__item}>
+                    <input name={inputParams.name} {...reference(inputParams.name)} type={inputParams.type} placeholder={inputParams.placeholder} />
+                </div>
                 {
                     inputParams.type === 'password' && inputParams.showRules && 
                     <ul className={styles.input__item__password}>

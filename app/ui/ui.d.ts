@@ -19,6 +19,7 @@ interface IInput {
     leftIcon?: IIcon;
     rightIcon?: IIcon;
     showRules?: boolean;
+    ref?: UseFormRegister<FieldValues>;
 }
 
 interface ICard {

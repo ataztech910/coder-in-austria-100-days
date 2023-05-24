@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node ./createAwsExports.mjs && next build",
     "start": "next start",
     "lint": "next lint",
     "test:watch": "jest --watch",
@@ -12,6 +12,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@aws-amplify/ui-react": "^4.6.3",
     "@contentful/rich-text-react-renderer": "^15.16.3",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
@@ -21,6 +22,7 @@
     "@types/react-dom": "18.0.11",
     "@types/react-transition-group": "^4.4.5",
     "autoprefixer": "10.4.14",
+    "aws-amplify": "^5.2.2",
     "contentful": "^10.1.2",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
@@ -28,6 +30,7 @@
     "postcss": "8.4.21",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.43.9",
     "react-transition-group": "^4.4.5",
     "sass": "^1.62.0",
     "tailwindcss": "3.3.1",
