@@ -1,39 +1,67 @@
+'use client';
+import { useRouter } from 'next/navigation';
 import styles from '@/app/ui/molecules/registration-form.module.scss';
 import Input from '../atoms/Input';
 import Button from '../atoms/Button';
 import AuthNavigation from '../atoms/AuthNavigation';
+import { Auth } from 'aws-amplify';
+import { useForm } from "react-hook-form";
+import "../../utils/amplifyConfigure";
 
 export default function RegistrationForm(formParams: any) {
+    const { register, handleSubmit } = useForm();
+    const router = useRouter();
+
     const email = {
         title: 'Your email*',
         placeholder: 'youremail@email.com',
-        type: 'email'
+        type: 'username',
+        name: 'username',
+        ref: register
     }
 
     const password = {
         title: 'Your password*',
         placeholder: 'your password',
         type: 'password',
-        showRules: !formParams.type
+        showRules: !formParams.type,
+        name: 'password',
+        ref: register
     }
 
     const button = {
         title: formParams.buttontitle ? formParams.buttontitle : 'Create an account',
-        type: 'button'
+        type: 'submit',
+    }
+
+    async function signIn({username, password}: {username: string, password: string}) {
+        console.log(username);
+        console.log(password);
+        try {
+            await Auth.signIn(username, password);
+            console.log('authorised');
+            router.push('/profile');
+          } catch (error) {
+            console.log('error signing in', error);
+          }
     }
 
     return(
-        <div className={styles.registrationForm} data-testid="registration">
-           <div className={styles.registrationForm__title}>{formParams?.header}</div>
-           <hr />
-           <Input {...email} />
-           <Input {...password} />
-           <Button {...button} />
-           { formParams?.showNavigation?.show  && 
-            <>
-                <AuthNavigation navConfig={formParams.showNavigation} />
-            </>
-           }
-        </div>    
+        <>
+            <form className="mt-8 space-y-6" onSubmit={handleSubmit(signIn)}>
+                <div className={styles.registrationForm} data-testid="registration">
+                    <div className={styles.registrationForm__title}>{formParams?.header}</div>
+                    <hr />
+                    <Input inputParams={email} reference={register} />
+                    <Input inputParams={password} reference={register} />
+                    <Button inputParams={button} />
+                    { formParams?.showNavigation?.show  && 
+                        <>
+                            <AuthNavigation navConfig={formParams.showNavigation} />
+                        </>
+                    }
+                </div>
+            </form>   
+        </> 
     );
 }

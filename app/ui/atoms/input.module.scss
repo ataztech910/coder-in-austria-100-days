@@ -133,14 +133,14 @@
     font-size: 13px;
     border-radius: 5px;
     width: 100%;
-    background-color: $lightBlue;
+    background-color: $lightBlue !important;
     transition: 0.2s;
     border: 1px solid transparent;
     &:hover {
-        background-color: $middleBlue;
+        background-color: $middleBlue !important;
     }
     &:active {
-        border-color: $inputGray;
+        border-color: $inputGray !important
     }
 }
 
