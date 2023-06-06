@@ -1,66 +1,54 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import styles from '@/app/ui/molecules/registration-form.module.scss';
-import Input from '../atoms/Input';
-import Button from '../atoms/Button';
-import AuthNavigation from '../atoms/AuthNavigation';
 import { Auth } from 'aws-amplify';
-import { useForm } from "react-hook-form";
 import "../../utils/amplifyConfigure";
+import { Authenticator } from "@aws-amplify/ui-react";
+import { useEffect, useState } from 'react';
 
 export default function RegistrationForm(formParams: any) {
-    const { register, handleSubmit } = useForm();
+    const [userState, setUserState] = useState(false); 
     const router = useRouter();
+    useEffect(() => {
+      if (userState) {
+        router.push('/profile');
+      }
+    }, [router, userState]);
 
-    const email = {
-        title: 'Your email*',
-        placeholder: 'youremail@email.com',
-        type: 'username',
-        name: 'username',
-        ref: register
-    }
-
-    const password = {
-        title: 'Your password*',
-        placeholder: 'your password',
-        type: 'password',
-        showRules: !formParams.type,
-        name: 'password',
-        ref: register
-    }
-
-    const button = {
-        title: formParams.buttontitle ? formParams.buttontitle : 'Create an account',
-        type: 'submit',
-    }
-
-    async function signIn(params?: any) {
-        const {username, password} = params;
-        try {
-            await Auth.signIn(username, password);
-            console.log('authorised');
-            router.push('/profile');
-          } catch (error) {
-            console.log('error signing in', error);
+    const services = {
+        async handleSignUp(formData: any) {
+          let { username, password } = formData;
+          username = username.toLowerCase();
+          return Auth.signUp({
+            username,
+            password,
+            autoSignIn: {
+              enabled: true,
+            },
+          });
+        },
+        async handleSignIn(formData: any) {
+          let { username, password } = formData;
+          // custom username
+          username = username.toLowerCase();
+          const auth = await Auth.signIn(username, password);
+          if (auth) {
+            setUserState(true);
           }
-    }
+          return auth;
+        }
+      };
 
     return(
         <>
-            <form className="mt-8 space-y-6" onSubmit={handleSubmit(signIn)}>
-                <div className={styles.registrationForm} data-testid="registration">
-                    <div className={styles.registrationForm__title}>{formParams?.header}</div>
-                    <hr />
-                    <Input inputParams={email} reference={register} />
-                    <Input inputParams={password} reference={register} />
-                    <Button inputParams={button} />
-                    { formParams?.showNavigation?.show  && 
-                        <>
-                            <AuthNavigation navConfig={formParams.showNavigation} />
-                        </>
-                    }
-                </div>
-            </form>   
+            <div className={styles.registrationForm} data-testid="registration">
+                <Authenticator 
+                  services={services} 
+                  initialState="signIn"
+                  >
+                    {({ signOut }) => <button onClick={signOut}>Sign out</button>}
+                </Authenticator>
+            </div>
         </> 
     );
 }

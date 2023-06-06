@@ -2,7 +2,7 @@
 import "../utils/amplifyConfigure";
 import PageLayout from '../page-layout';
 import { Auth } from 'aws-amplify';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useRouter } from "next/navigation";
 
 function Profile(context: any) {
@@ -10,26 +10,34 @@ function Profile(context: any) {
   const router = useRouter();
   
   useEffect(() => {
-    Auth.currentAuthenticatedUser()
-      .then(user => {
-        setUser(user)
-      })
-      .catch(err => {
-        setUser({username: ""});
-        router.push('/auth/signin');
-      });
-  }, [])
+    const fetchUser = async () => {
+      try {
+        const user = await Auth.currentAuthenticatedUser();
+        setUser({username: user.username});
+        console.log(user);
+      } catch(e) {
+        console.error(e);
+      }
+      
+    }
+
+    fetchUser().catch(() => {
+      setUser({username: ""})
+      router.push('/auth/signin');
+    });
+    
+  }, [router]);
 
   return (
-    <main>
         <PageLayout>
-          {user && 
-            <h1 className="my-6 text-center text-3xl font-extrabold text-gray-900">
-                Welcome, {user?.username}
-            </h1>
-          } 
+          <main>
+            {user?.username !== "" && 
+              <h1 className="my-6 text-center text-3xl font-extrabold text-gray-900">
+                  Welcome, {user?.username}
+              </h1>
+            }
+          </main>
         </PageLayout>
-    </main>
   )
 }
 

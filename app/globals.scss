@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 @import './colors';
+@import "@aws-amplify/ui-react/styles.css";
+
 body {
   font-family: 'JetBrains Mono', monospace;
   color: #fff;
@@ -66,4 +68,19 @@ svg {
 
 .fa-xl {
   max-height: 2rem !important;
+}
+
+[data-amplify-authenticator] {
+  --amplify-components-button-primary-background-color:  $darkBlue;
+  --amplify-components-authenticator-container-width-max: 100%;
+  .amplify-button--primary {
+    background-color: $darkBlue !important;
+  }
+  .amplify-tabs-item[data-state=active] {
+    color: $darkBlue;
+    border-color: $darkBlue;
+  }
+  .amplify-button--link {
+    color: $darkBlue; 
+  }
 }

@@ -11,20 +11,16 @@ export default function InputWithIcon(inputParams: IInput) {
         <div className={`${styles.inputLayout} ${inputParams.additionalClasses}`}>
             <input className={`${styles[inputParams.class as string]} ${hasPadding}`} type="text" placeholder={inputParams.placeholder} />
             {inputParams.leftIcon && 
-                <div className={`absolute ${styles.leftIcon}`}>
-                    {
+                <div className={`absolute ${styles.leftIcon}`}>{
                         inputParams.leftIcon && 
                         <FontAwesomeIcon icon={inputParams.leftIcon.objectName} 
                             className={`fa fa-thin ${inputParams.leftIcon.className}`} color="#565656" />
-                    }
-                </div>
+                }</div>
             }
-            <button className={`absolute ${styles.rightIcon} buttonIcon`} data-test-id={inputParams.rightIcon?.testId}>
-                {
+            <button className={`absolute ${styles.rightIcon} buttonIcon`} data-test-id={inputParams.rightIcon?.testId}>{
                     inputParams.rightIcon && 
                     <FontAwesomeIcon icon={inputParams.rightIcon.objectName} className={`fa fa-thin ${inputParams.rightIcon.className}`} color="white" />
-                }
-            </button>
+            }</button>
         </div> 
     );
 }

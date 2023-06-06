@@ -115,3 +115,13 @@ interface ICourse {
     bottomTitle: string;
     bottomText: string;
 };
+
+interface IAWSError {
+    message: string;
+}
+
+interface IError {
+    awsId: string;
+    field: string;
+    errorMessage: string;
+}
