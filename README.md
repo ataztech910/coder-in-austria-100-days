@@ -54,7 +54,7 @@ This is a source code for the 100 days challenge. The rules for the challenge ar
 - Day 4. Create the user model in Amazon Web Services (AWS) ✅
 - Day 5. Create the connection to AWS in the web app ✅
 - Day 6. Connect the login page to Amazon Web Services (AWS) ✅
-- Day 7. Connect the registration page to Amazon Web Services (AWS) ⌚
+- Day 7. Connect the registration page to Amazon Web Services (AWS) ✅
 - Day 8. Connect the course page to new flow ⌚
 - Day 9. Create an E2E test for the new flow ⌚
 - Day 10. Sprint review and planning ⌚
