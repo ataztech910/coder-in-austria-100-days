@@ -10,8 +10,8 @@
     "config": {
       "SourceDir": "app",
       "DistributionDir": ".next",
-      "BuildCommand": "npm.cmd run-script build",
-      "StartCommand": "npm.cmd run-script dev"
+      "BuildCommand": "yarn build",
+      "StartCommand": "yarn start"
     }
   }
 }

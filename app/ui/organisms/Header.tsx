@@ -1,3 +1,4 @@
+'use client';
 import styles from '@/app/ui/organisms/header.module.scss';
 import Logo from '../atoms/Logo';
 import Separator from '../atoms/Separator';
@@ -7,7 +8,8 @@ import Sidebar from '../molecules/Sidebar';
 import TopMenu from '../molecules/TopMenu';
 import TopSearch from '../molecules/TopSearch';
 
-export default function Header(user: any) {
+export default function Header() {
+    
     return(
         <header data-testid="header" className={`${styles.header} sticky top-0`}>
             <div className='flex items-center justify-between content'>

@@ -1,9 +1,19 @@
 @import '../../colors';
-
+@import '../atoms/input.module';
 .registrationForm {
     background-color: #fff;
     color: #000;
     hr {
         @apply my-5;
+    }
+    &__singnout {
+        @apply m-auto max-w-[50%] text-center;
+        
+        button {
+            @apply mb-8;
+            @extend .startCourse;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
     }
 }

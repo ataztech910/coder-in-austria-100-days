@@ -46,7 +46,12 @@ export default function RegistrationForm(formParams: any) {
                   services={services} 
                   initialState="signIn"
                   >
-                    {({ signOut }) => <button onClick={signOut}>Sign out</button>}
+                    {({ signOut }) => 
+                      <div className={styles.registrationForm__singnout}>
+                        <button onClick={signOut}>Sign out</button>
+                      </div> 
+                    
+                    }
                 </Authenticator>
             </div>
         </> 

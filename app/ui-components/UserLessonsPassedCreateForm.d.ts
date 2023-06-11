@@ -14,22 +14,25 @@ export declare type ValidationResponse = {
 export declare type ValidationFunction<T> = (value: T, validationResponse: ValidationResponse) => ValidationResponse | Promise<ValidationResponse>;
 export declare type UserLessonsPassedCreateFormInputValues = {
     courseID?: string;
-    lastQuestionaireScore?: number;
+    moduleID?: string;
     lessonID?: string;
+    lastQuestionaireScore?: string;
     owner?: string;
 };
 export declare type UserLessonsPassedCreateFormValidationValues = {
     courseID?: ValidationFunction<string>;
-    lastQuestionaireScore?: ValidationFunction<number>;
+    moduleID?: ValidationFunction<string>;
     lessonID?: ValidationFunction<string>;
+    lastQuestionaireScore?: ValidationFunction<string>;
     owner?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type UserLessonsPassedCreateFormOverridesProps = {
     UserLessonsPassedCreateFormGrid?: PrimitiveOverrideProps<GridProps>;
     courseID?: PrimitiveOverrideProps<TextFieldProps>;
-    lastQuestionaireScore?: PrimitiveOverrideProps<TextFieldProps>;
+    moduleID?: PrimitiveOverrideProps<TextFieldProps>;
     lessonID?: PrimitiveOverrideProps<TextFieldProps>;
+    lastQuestionaireScore?: PrimitiveOverrideProps<TextFieldProps>;
     owner?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type UserLessonsPassedCreateFormProps = React.PropsWithChildren<{

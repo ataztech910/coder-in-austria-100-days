@@ -1,0 +1,18 @@
+projects:
+  CoderInAustria:
+    schemaPath: amplify/backend/api/CoderInAustria/build/schema.graphql
+    includes:
+      - app/graphql
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: typescript
+        generatedFileName: app/API.ts
+        docsFilePath: app
+        region: eu-central-1
+        apiId: null
+        maxDepth: 2
+extensions:
+  amplify:
+    version: 3

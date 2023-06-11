@@ -5,8 +5,8 @@ import Link from 'next/link';
 
 export default function LessonLine(lesson: ILesson) {
     return(
-        <div className={styles.lesson}>
-            <Link href={lesson.slug} className={styles.lesson__line}>
+        <div className={styles.lesson} role='listitem' data-testid='lessonItem'>
+            <Link href={lesson.slug} className={styles.lesson__line} aria-checked={lesson.status? true: false}>
                 <div>
                     {lesson.icon &&
                         <FontAwesomeIcon icon={faAlignLeft} className="fas fa-align-left fa-lg" />

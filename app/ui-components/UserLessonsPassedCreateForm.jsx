@@ -24,28 +24,32 @@ export default function UserLessonsPassedCreateForm(props) {
   } = props;
   const initialValues = {
     courseID: "",
-    lastQuestionaireScore: "",
+    moduleID: "",
     lessonID: "",
+    lastQuestionaireScore: "",
     owner: "",
   };
   const [courseID, setCourseID] = React.useState(initialValues.courseID);
+  const [moduleID, setModuleID] = React.useState(initialValues.moduleID);
+  const [lessonID, setLessonID] = React.useState(initialValues.lessonID);
   const [lastQuestionaireScore, setLastQuestionaireScore] = React.useState(
     initialValues.lastQuestionaireScore
   );
-  const [lessonID, setLessonID] = React.useState(initialValues.lessonID);
   const [owner, setOwner] = React.useState(initialValues.owner);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     setCourseID(initialValues.courseID);
-    setLastQuestionaireScore(initialValues.lastQuestionaireScore);
+    setModuleID(initialValues.moduleID);
     setLessonID(initialValues.lessonID);
+    setLastQuestionaireScore(initialValues.lastQuestionaireScore);
     setOwner(initialValues.owner);
     setErrors({});
   };
   const validations = {
     courseID: [],
-    lastQuestionaireScore: [],
+    moduleID: [],
     lessonID: [],
+    lastQuestionaireScore: [],
     owner: [],
   };
   const runValidationTasks = async (
@@ -75,8 +79,9 @@ export default function UserLessonsPassedCreateForm(props) {
         event.preventDefault();
         let modelFields = {
           courseID,
-          lastQuestionaireScore,
+          moduleID,
           lessonID,
+          lastQuestionaireScore,
           owner,
         };
         const validationResponses = await Promise.all(
@@ -133,8 +138,9 @@ export default function UserLessonsPassedCreateForm(props) {
           if (onChange) {
             const modelFields = {
               courseID: value,
-              lastQuestionaireScore,
+              moduleID,
               lessonID,
+              lastQuestionaireScore,
               owner,
             };
             const result = onChange(modelFields);
@@ -151,21 +157,74 @@ export default function UserLessonsPassedCreateForm(props) {
         {...getOverrideProps(overrides, "courseID")}
       ></TextField>
       <TextField
-        label="Last questionaire score"
+        label="Module id"
         isRequired={false}
         isReadOnly={false}
-        type="number"
-        step="any"
-        value={lastQuestionaireScore}
+        value={moduleID}
         onChange={(e) => {
-          let value = isNaN(parseInt(e.target.value))
-            ? e.target.value
-            : parseInt(e.target.value);
+          let { value } = e.target;
           if (onChange) {
             const modelFields = {
               courseID,
-              lastQuestionaireScore: value,
+              moduleID: value,
               lessonID,
+              lastQuestionaireScore,
+              owner,
+            };
+            const result = onChange(modelFields);
+            value = result?.moduleID ?? value;
+          }
+          if (errors.moduleID?.hasError) {
+            runValidationTasks("moduleID", value);
+          }
+          setModuleID(value);
+        }}
+        onBlur={() => runValidationTasks("moduleID", moduleID)}
+        errorMessage={errors.moduleID?.errorMessage}
+        hasError={errors.moduleID?.hasError}
+        {...getOverrideProps(overrides, "moduleID")}
+      ></TextField>
+      <TextField
+        label="Lesson id"
+        isRequired={false}
+        isReadOnly={false}
+        value={lessonID}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              courseID,
+              moduleID,
+              lessonID: value,
+              lastQuestionaireScore,
+              owner,
+            };
+            const result = onChange(modelFields);
+            value = result?.lessonID ?? value;
+          }
+          if (errors.lessonID?.hasError) {
+            runValidationTasks("lessonID", value);
+          }
+          setLessonID(value);
+        }}
+        onBlur={() => runValidationTasks("lessonID", lessonID)}
+        errorMessage={errors.lessonID?.errorMessage}
+        hasError={errors.lessonID?.hasError}
+        {...getOverrideProps(overrides, "lessonID")}
+      ></TextField>
+      <TextField
+        label="Last questionaire score"
+        isRequired={false}
+        isReadOnly={false}
+        value={lastQuestionaireScore}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              courseID,
+              moduleID,
+              lessonID,
+              lastQuestionaireScore: value,
               owner,
             };
             const result = onChange(modelFields);
@@ -184,33 +243,6 @@ export default function UserLessonsPassedCreateForm(props) {
         {...getOverrideProps(overrides, "lastQuestionaireScore")}
       ></TextField>
       <TextField
-        label="Lesson id"
-        isRequired={false}
-        isReadOnly={false}
-        value={lessonID}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              courseID,
-              lastQuestionaireScore,
-              lessonID: value,
-              owner,
-            };
-            const result = onChange(modelFields);
-            value = result?.lessonID ?? value;
-          }
-          if (errors.lessonID?.hasError) {
-            runValidationTasks("lessonID", value);
-          }
-          setLessonID(value);
-        }}
-        onBlur={() => runValidationTasks("lessonID", lessonID)}
-        errorMessage={errors.lessonID?.errorMessage}
-        hasError={errors.lessonID?.hasError}
-        {...getOverrideProps(overrides, "lessonID")}
-      ></TextField>
-      <TextField
         label="Owner"
         isRequired={false}
         isReadOnly={false}
@@ -220,8 +252,9 @@ export default function UserLessonsPassedCreateForm(props) {
           if (onChange) {
             const modelFields = {
               courseID,
-              lastQuestionaireScore,
+              moduleID,
               lessonID,
+              lastQuestionaireScore,
               owner: value,
             };
             const result = onChange(modelFields);
