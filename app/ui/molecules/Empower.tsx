@@ -19,7 +19,7 @@ export default function Empower(empowerData: any) {
                         {
                             empowerData?.fields?.bullets.map((item: any) => {
                                 return(
-                                    <li key={`bullet-${Math.floor(Math.random() * 100)}`}>
+                                    <li key={`bullet-${Math.floor(Math.random() * 1000)}`}>
                                         <div className={styles.empower__text__bullets__icon}></div>
                                         <div className={styles.empower__text__bullets__text}>
                                             <h5>{item.fields.title}</h5>

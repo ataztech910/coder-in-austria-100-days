@@ -9,7 +9,7 @@ export default function Motivation(cards: any) {
                 <div className={styles.motivation__cards}>
                     {
                         cards?.fields?.cards?.map((card: any) => 
-                            <div key={`card-${Math.floor(Math.random() * 100)}`} ><Card {...card.fields} /></div>)
+                            <div key={`card-${Math.floor(Math.random() * 1000)}`} ><Card {...card.fields} /></div>)
                     }
                 </div>
             </div>

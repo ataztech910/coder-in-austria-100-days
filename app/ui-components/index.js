@@ -7,5 +7,3 @@
 export { default as studioTheme } from "./studioTheme";
 export { default as UserLessonsPassedCreateForm } from "./UserLessonsPassedCreateForm";
 export { default as UserLessonsPassedUpdateForm } from "./UserLessonsPassedUpdateForm";
-export { default as UserDataCreateForm } from "./UserDataCreateForm";
-export { default as UserDataUpdateForm } from "./UserDataUpdateForm";

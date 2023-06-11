@@ -7,6 +7,7 @@ import { use } from "react";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import BottomSeparator from '@/app/ui/atoms/BottomSeparator';
+import PageLayout from '@/app/page-layout';
 
 const renderOptions = {
     renderNode: {
@@ -44,6 +45,7 @@ const renderOptions = {
         }
       },
   
+      // eslint-disable-next-line react/display-name
       [BLOCKS.EMBEDDED_ASSET]: (node: any, children: any) => {
         // render the EMBEDDED_ASSET as you need
         return (
@@ -151,27 +153,31 @@ export default function BlogItem(props: IPageProps) {
     };
 
     return (
-        <div className={`${styles.blogItem} content !mt-8`}>
-            <div className={styles.blogItem__left}>
-                <BreadCrumbs {...breadCrumbs} />
-                <h1>{data[0].fields.title}</h1>
-                <div className={styles.blogItem__left__date}>
-                    {`${month} ${date.toLocaleString('default', { month: 'short' })}, ${year}`}
-                </div>
-                <BottomSeparator {...separatorConfig} />
-                <div className={styles.blogItem__left__image} style={{
-                    backgroundImage: `url(https:${data[0]?.fields?.topImage?.fields?.file?.url})`
-                }}>
-                </div>
-                <div className={styles.blogItem__left__content}>
-                    {documentToReactComponents(data[0].fields.blogText, renderOptions)}
-                </div>
-            </div>
-            <div className={styles.blogItem__right}>
-                <div className={styles.blogItem__right__navigation}>
-                        <BlogNavigation {...blogNavigation} />
-                </div>
-            </div>
-        </div>
+      <PageLayout>
+        <main>
+          <div className={`${styles.blogItem} content !mt-8`}>
+              <div className={styles.blogItem__left}>
+                  <BreadCrumbs {...breadCrumbs} />
+                  <h1>{data[0].fields.title}</h1>
+                  <div className={styles.blogItem__left__date}>
+                      {`${month} ${date.toLocaleString('default', { month: 'short' })}, ${year}`}
+                  </div>
+                  <BottomSeparator {...separatorConfig} />
+                  <div className={styles.blogItem__left__image} style={{
+                      backgroundImage: `url(https:${data[0]?.fields?.topImage?.fields?.file?.url})`
+                  }}>
+                  </div>
+                  <div className={styles.blogItem__left__content}>
+                      {documentToReactComponents(data[0].fields.blogText, renderOptions)}
+                  </div>
+              </div>
+              <div className={styles.blogItem__right}>
+                  <div className={styles.blogItem__right__navigation}>
+                          <BlogNavigation {...blogNavigation} />
+                  </div>
+              </div>
+          </div>
+          </main>
+        </PageLayout>
     );
 }

@@ -1,6 +1,9 @@
 @import '../../colors';
 @import '../../ui/atoms/input.module.scss';
 
+.loader {
+    @apply m-auto max-w-[fit-content];
+}
 .courseItem {
     display: block;
     color: $darkGray;

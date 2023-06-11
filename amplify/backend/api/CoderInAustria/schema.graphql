@@ -1,22 +1,9 @@
-type UserLessonsPassed @model @auth(rules: [{allow: owner}]) {
+type UserLessonsPassed @model @auth(rules: [{allow: owner, ownerField: "owner", operations: [read, update]}]) {
   id: ID!
   courseID: String
-  lastQuestionaireScore: Int
+  moduleID: String
   lessonID: String
-  owner: String
-}
-
-enum Languages {
-  ENGLISH
-  RUSSIAN
-}
-
-type UserData @model @auth(rules: [{allow: owner}]) {
-  id: ID!
-  isMentor: Boolean!
-  image: String
-  description: String
-  language: Languages
+  lastQuestionaireScore: String
   owner: String
 }
  

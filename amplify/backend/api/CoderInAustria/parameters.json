@@ -2,11 +2,11 @@
   "AppSyncApiName": "CoderInAustria",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
   "DynamoDBEnableServerSideEncryption": false,
+  "AuthModeLastUpdated": "2023-06-11T19:48:02.944Z",
   "AuthCognitoUserPoolId": {
     "Fn::GetAtt": [
       "authCoderInAustria",
       "Outputs.UserPoolId"
     ]
-  },
-  "AuthModeLastUpdated": "2023-05-21T21:05:32.306Z"
+  }
 }

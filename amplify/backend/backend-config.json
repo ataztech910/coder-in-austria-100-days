@@ -59,12 +59,5 @@
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
     }
-  },
-  "storage": {
-    "s3coderinaustriastorage06af4fa5": {
-      "dependsOn": [],
-      "providerPlugin": "awscloudformation",
-      "service": "S3"
-    }
   }
 }
