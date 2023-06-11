@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import './colors';
+// eslint-disable-next-line import/no-unresolved
 @import "@aws-amplify/ui-react/styles.css";
 
 body {
