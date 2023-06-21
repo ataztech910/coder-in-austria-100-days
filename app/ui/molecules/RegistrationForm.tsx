@@ -4,16 +4,13 @@ import styles from '@/app/ui/molecules/registration-form.module.scss';
 import { Auth } from 'aws-amplify';
 import "../../utils/amplifyConfigure";
 import { Authenticator } from "@aws-amplify/ui-react";
-import { useEffect, useState } from 'react';
+import { setAuthState } from '@/app/store/slices/authSlice';
+import { useDispatch } from 'react-redux';
+import { AuthEventData } from '@aws-amplify/ui';
 
 export default function RegistrationForm(formParams: any) {
-    const [userState, setUserState] = useState(false); 
+    const dispatch = useDispatch();
     const router = useRouter();
-    useEffect(() => {
-      if (userState) {
-        router.push('/profile');
-      }
-    }, [router, userState]);
 
     const services = {
         async handleSignUp(formData: any) {
@@ -33,11 +30,22 @@ export default function RegistrationForm(formParams: any) {
           username = username.toLowerCase();
           const auth = await Auth.signIn(username, password);
           if (auth) {
-            setUserState(true);
+            dispatch(setAuthState({
+              authState: true,
+              user: {
+                username: auth.attributes.email
+              }
+            }));
+            router.push('/profile');
           }
           return auth;
         }
       };
+
+    const wrapSignOut = (signout?: ((data?: AuthEventData | undefined) => void)) => {
+      dispatch(setAuthState({ authState: false }));
+      if (signout) signout();
+    }  
 
     return(
         <>
@@ -48,7 +56,7 @@ export default function RegistrationForm(formParams: any) {
                   >
                     {({ signOut }) => 
                       <div className={styles.registrationForm__singnout}>
-                        <button onClick={signOut}>Sign out</button>
+                        <button onClick={() => wrapSignOut(signOut)}>Sign out</button>
                       </div> 
                     
                     }

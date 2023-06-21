@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import './globals.scss';
 import { JetBrains_Mono } from 'next/font/google';
+import { Providers } from './store/providers/provider';
 
 const jetBrains = JetBrains_Mono({ subsets: ['latin'] })
 
@@ -20,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" className='scroll-smooth'>
       <body className={jetBrains.className}>
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   )
