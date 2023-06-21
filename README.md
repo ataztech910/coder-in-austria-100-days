@@ -60,7 +60,7 @@ This is a source code for the 100 days challenge. The rules for the challenge ar
 - Day 10. Sprint review and planning ✅
 
 ### Sprint 5/10
-Day 1. Implement Redux into the project⌚
+Day 1. Implement Redux into the project✅
 Day 2. Create Jest tests for the store ⌚
 Day 3. Create the reducers depending on tests ⌚
 Day 4. Wrap current Auth with store⌚
