@@ -58,3 +58,16 @@ This is a source code for the 100 days challenge. The rules for the challenge ar
 - Day 8. Connect the course page to new flow ✅
 - Day 9. Create an E2E test for the new flow ✅
 - Day 10. Sprint review and planning ✅
+
+### Sprint 5/10
+Day 1. Implement Redux into the project⌚
+Day 2. Create Jest tests for the store ⌚
+Day 3. Create the reducers depending on tests ⌚
+Day 4. Wrap current Auth with store⌚
+Day 5. Update E2E tests having new requirements⌚
+Day 6. Create the UI for the user profile in Figma + Create the statistics widget UI for main page⌚
+Day 7.Create the profile page Frontend⌚
+Day 8. Create the widget frontend⌚
+Day 9. Connect profile and widget to the AWS data model⌚
+Day 10. Update E2E tests ⌚
+Day 11. Sprint review and planning⌚

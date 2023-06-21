@@ -22,7 +22,7 @@ test('Page rendered', async ({ page }) => {
   await expect(page.getByText(/Start course/).last()).toBeVisible();
   const lesson = page.getByTestId('lessonItem').first();
   console.log(lesson.getByText(/What Is AWS?/));
-  await expect(lesson.getByRole('link')).toHaveAttribute('aria-checked', 'true')
+  await expect(lesson.getByRole('link')).toHaveAttribute('aria-checked', 'true');
 });
 
 
