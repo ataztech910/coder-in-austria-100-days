@@ -1,31 +1,33 @@
 'use client';
 import PageLayout from '../page-layout';
-import { Auth } from 'aws-amplify';
-import { useState, useEffect, useMemo } from 'react';
 import { useRouter } from "next/navigation";
-import { fetchUser } from "../utils/aws-user-functions";
+import { useSelector } from 'react-redux';
+import { selectAuthState } from '../store/slices/authSlice';
+import { useEffect } from 'react';
 
 function Profile(context: any) {
-  const [user, setUser] = useState({username: ""});
+  const authState = useSelector(selectAuthState);
   const router = useRouter();
   
   useEffect(() => {
-    fetchUser(setUser).catch(() => {
-      setUser({username: ""})
+    if(!authState?.user) {
       router.push('/auth/signin');
-    });
-  }, [router]);
+    }
+  }, [authState, router]);
 
   return (
-        <PageLayout>
-          <main>
-            {user?.username !== "" && 
-              <h1 className="my-6 text-center text-3xl font-extrabold text-gray-900">
-                  Welcome, {user?.username}
-              </h1>
-            }
-          </main>
-        </PageLayout>
+        <>
+        {authState?.user && 
+          <PageLayout>
+            <main>
+                <h1 className="my-6 text-center text-3xl font-extrabold text-gray-900">
+                    Welcome, {authState?.user?.username}
+                </h1>
+              
+            </main>
+          </PageLayout>
+        }
+        </>
   )
 }
 
