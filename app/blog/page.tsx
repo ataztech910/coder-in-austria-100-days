@@ -26,8 +26,8 @@ export const metadata = {
 
 export default function Blog() {
   const data = use && use(getPageData());
-  const recomendedBlogData = data && recomendedBlogContent(data);
-  const rescentBlogData = data && { items: rescentBlogContent(data) };
+  const recommendedBlogData = data && recomendedBlogContent(data);
+  const recentBlogData = data && { items: rescentBlogContent(data) };
   const popularBlogData = data && popularBlogContent(data);
   
   const breadCrumbs = {
@@ -91,14 +91,14 @@ export default function Blog() {
           {data && 
           <>
             <div className={styles.blog__recomended}>
-              <BlogCard {...recomendedBlogData[0]}/>
-              <BlogCard {...recomendedBlogData[1]}/>
-              <BlogCard {...recomendedBlogData[2]}/>
+              <BlogCard {...recommendedBlogData[0]}/>
+              <BlogCard {...recommendedBlogData[1]}/>
+              <BlogCard {...recommendedBlogData[2]}/>
             </div>
 
             <div className={styles.blog__blogContent}>
               <div className={styles.blog__blogContent__left}>
-                <BlogArticleList {...rescentBlogData} />
+                <BlogArticleList {...recentBlogData} />
               </div>
               <div className={styles.blog__blogContent__right}>
                 <BlogNavigation {...blogNavigation} />
