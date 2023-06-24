@@ -1,8 +1,7 @@
 import Authorisation from "@/app/ui/organisms/Authorisation";
 
 async function fetchData(context: any) {
-  const slug = context.params.slug;
-  return slug;
+  return context.params.slug;
 }
 export default async function Auth(context: any) {
   const slug = await fetchData(context);
