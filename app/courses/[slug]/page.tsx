@@ -8,8 +8,8 @@ import CourseStrategyContext from './course-strategy-context';
 import { useEffect, useState } from 'react';
 import PageLayout from '@/app/page-layout';
 import { API } from 'aws-amplify';
-import { CirclePopLoader } from 'react-loaders-kit';
 import { listUserLessonsPasseds } from '@/app/queries';
+import { Loader } from '@aws-amplify/ui-react';
 
 type Props = {
     params: { id: string };
@@ -69,7 +69,8 @@ export default function CourseItem(props: IPageProps) {
             <>
                 {!courseData ? (
                     <div className={styles.loader}>
-                        <CirclePopLoader loading={true} />
+                        {/*<CirclePopLoader loading={true} />*/}
+                        <Loader variation="linear" />
                     </div> 
                 ) : (
                     <div className={`${styles.courseItem}`}>
