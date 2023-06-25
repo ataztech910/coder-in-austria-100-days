@@ -1,4 +1,12 @@
 {
+  "rules": {
+    "semi": "error",
+    "prefer-const": "error",
+    "object-curly-spacing": ["error", "always", { "arraysInObjects": false }],
+    "indent": ["error", 2],
+    "no-multi-spaces": ["error"],
+    "keyword-spacing": ["error", { "before": true }]
+  },
   "extends": [
     "next/core-web-vitals",
     "plugin:storybook/recommended"

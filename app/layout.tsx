@@ -3,7 +3,7 @@ import './globals.scss';
 import { JetBrains_Mono } from 'next/font/google';
 import { Providers } from './store/providers/provider';
 
-const jetBrains = JetBrains_Mono({ subsets: ['latin'] })
+const jetBrains = JetBrains_Mono({ subsets: ['latin']});
 
 export const metadata: Metadata = {
   title: 'Coder in Austria',
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   icons: {
     icon: '/images/favicon.ico',
   },
-}
+};
 
 export default function RootLayout({
   children,
@@ -24,5 +24,5 @@ export default function RootLayout({
         <Providers>{children}</Providers>
       </body>
     </html>
-  )
+  );
 }

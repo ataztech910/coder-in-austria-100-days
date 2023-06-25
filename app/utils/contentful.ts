@@ -14,19 +14,19 @@ type GetPageParams = {
 };
 
 async function getPage(params: GetPageParams, isSinglePage = true) {
-    const query = {
-      limit: params?.limit ?? 1,
-      include: 10,
-      locale: params.locale,
-      'fields.slug': params.slug,
-      content_type: params.pageContentType,
-    };
-    if (isSinglePage) {
-      const { items: [page] } = await client.getEntries(query);
-      return page || null;
-    }
-    const { items } = await client.getEntries(query);
-    return items || null;
+  const query = {
+    limit: params?.limit ?? 1,
+    include: 10,
+    locale: params.locale,
+    'fields.slug': params.slug,
+    content_type: params.pageContentType,
+  };
+  if (isSinglePage) {
+    const { items: [page] } = await client.getEntries(query);
+    return page || null;
+  }
+  const { items } = await client.getEntries(query);
+  return items || null;
 };
 
 export { getPage };

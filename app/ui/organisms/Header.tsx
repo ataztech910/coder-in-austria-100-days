@@ -10,18 +10,18 @@ import TopSearch from '../molecules/TopSearch';
 
 export default function Header() {
     
-    return(
-        <header data-testid="header" className={`${styles.header} sticky top-0`}>
-            <div className='flex items-center justify-between content'>
-                <Sidebar />
-                <Logo isResponsive={true} />
-                <TopMenu />
-                <TopSearch />
-                <Separator />
-                <LanguageSelector />
-                <Separator />
-                <Login />
-            </div>
-        </header>
-    );
+  return (
+    <header data-testid="header" className={`${styles.header} sticky top-0`}>
+      <div className='flex items-center justify-between content'>
+        <Sidebar />
+        <Logo isResponsive={true} />
+        <TopMenu />
+        <TopSearch />
+        <Separator />
+        <LanguageSelector />
+        <Separator />
+        <Login />
+      </div>
+    </header>
+  );
 }
