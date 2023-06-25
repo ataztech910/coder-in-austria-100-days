@@ -10,6 +10,8 @@ import PageLayout from '@/app/page-layout';
 import { API } from 'aws-amplify';
 import { listUserLessonsPasseds } from '@/app/queries';
 import { Loader } from '@aws-amplify/ui-react';
+import {useSelector} from "react-redux";
+import {selectAuthState} from "@/app/store/slices/authSlice";
 
 type Props = {
     params: { id: string };
@@ -19,6 +21,7 @@ type Props = {
 export default function CourseItem(props: IPageProps) {
     const [courseData, setCourseData] = useState<any>();
     const [bannerData, setBannerData] = useState<any>();
+    const authState = useSelector(selectAuthState);
 
     useEffect(() => {
         const strategy = new CourseStrategyContext(new ContentfulStrategy());
@@ -35,10 +38,10 @@ export default function CourseItem(props: IPageProps) {
     }, [props.params.slug]);
 
     async function getUserData() {
-        return await API.graphql({ query: listUserLessonsPasseds});
+        return authState.authState ? API.graphql({query: listUserLessonsPasseds}) : null;
     }
     useEffect(() => {
-        getUserData().then((data: Partial<any>) => {
+        getUserData() !== null && getUserData().then((data: Partial<any> | null) => {
             const items = data?.data?.listUserLessonsPasseds?.items;
             let lessonsStatistics: Partial<any> = {};
             if (items) {
