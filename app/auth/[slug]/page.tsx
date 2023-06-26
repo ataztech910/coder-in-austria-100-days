@@ -12,7 +12,7 @@ export default async function Auth(context: any) {
 
   return (
     <main>
-        <Authorisation {...pageParams}  />
+      <Authorisation {...pageParams} />
     </main>
-  )
+  );
 }

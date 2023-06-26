@@ -3,22 +3,22 @@ import BlogArticleListItem from './BlogArticleListItem';
 import BottomSeparator from '../atoms/BottomSeparator';
 
 export default function BlogArticleList(blogListData: any) {
-    const separatorConfig = {
-        isDark: true
-    }
-    return(
-        <div className={styles.blogArticleList}>
-            <h2>Recent posts</h2>
-            <BottomSeparator {...separatorConfig} />
-            <ul>
-                {blogListData?.items?.map((blogItem: any) => {
-                    return (
-                        <li key={blogItem.url} className='mb-8'>
-                            <BlogArticleListItem {...blogItem} />
-                        </li>
-                    )
-                })}
-            </ul>
-        </div>
-    );
+  const separatorConfig = {
+    isDark: true
+  };
+  return (
+    <div className={styles.blogArticleList}>
+      <h2>Recent posts</h2>
+      <BottomSeparator {...separatorConfig} />
+      <ul>
+        {blogListData?.items?.map((blogItem: any) => {
+          return (
+            <li key={blogItem.url} className='mb-8'>
+              <BlogArticleListItem {...blogItem} />
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
 }

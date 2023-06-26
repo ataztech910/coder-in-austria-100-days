@@ -1,11 +1,11 @@
-import { use } from 'react'
-import Empower from './ui/molecules/Empower'
-import FindYourMentor from './ui/molecules/FindYourMentor'
-import HeroBanner from './ui/molecules/HeroBanner'
-import Motivation from './ui/molecules/Motivation'
-import StatisticsLayout from './ui/molecules/StatisticsLayout'
-import { getPage } from './utils/contentful'
-import PageLayout from './page-layout'
+import { use } from 'react';
+import Empower from './ui/molecules/Empower';
+import FindYourMentor from './ui/molecules/FindYourMentor';
+import HeroBanner from './ui/molecules/HeroBanner';
+import Motivation from './ui/molecules/Motivation';
+import StatisticsLayout from './ui/molecules/StatisticsLayout';
+import { getPage } from './utils/contentful';
+import PageLayout from './page-layout';
 
 async function getPageData () {
   return await getPage({
@@ -27,5 +27,5 @@ export default function Home() {
         <Empower {...data?.fields?.content[3]} />
       </main>
     </PageLayout>
-  )
+  );
 }

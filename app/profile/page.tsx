@@ -2,25 +2,25 @@
 import PageLayout from '../page-layout';
 import { useSelector } from 'react-redux';
 import { selectAuthState } from '../store/slices/authSlice';
-import withAuth from "@/app/utils/with-auth.hoc";
+import withAuth from '@/app/utils/with-auth.hoc.tsx';
 
 function Profile() {
   const authState = useSelector(selectAuthState);
 
   return (
-        <>
-          {authState?.user &&
+    <>
+      {authState?.user &&
             <PageLayout>
               <main>
-                  <h1 className="my-6 text-center text-3xl font-extrabold text-gray-900">
+                <h1 className="my-6 text-center text-3xl font-extrabold text-gray-900">
                       Welcome, {authState?.user?.username}
-                  </h1>
+                </h1>
 
               </main>
             </PageLayout>
-          }
-        </>
-  )
+      }
+    </>
+  );
 }
 
 export default withAuth(Profile);

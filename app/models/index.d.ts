@@ -2,10 +2,6 @@ import { ModelInit, MutableModel, __modelMeta__, ManagedIdentifier } from "@aws-
 // @ts-ignore
 import { LazyLoading, LazyLoadingDisabled } from "@aws-amplify/datastore";
 
-
-
-
-
 type EagerUserLessonsPassed = {
   readonly [__modelMeta__]: {
     identifier: ManagedIdentifier<UserLessonsPassed, 'id'>;
@@ -40,4 +36,4 @@ export declare type UserLessonsPassed = LazyLoading extends LazyLoadingDisabled 
 
 export declare const UserLessonsPassed: (new (init: ModelInit<UserLessonsPassed>) => UserLessonsPassed) & {
   copyOf(source: UserLessonsPassed, mutator: (draft: MutableModel<UserLessonsPassed>) => MutableModel<UserLessonsPassed> | void): UserLessonsPassed;
-}
+};

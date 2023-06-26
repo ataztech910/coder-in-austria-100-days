@@ -10,10 +10,10 @@ import PageLayout from '../page-layout';
 
 async function getPageData () {
   return await getPage({
-   pageContentType: 'blogItem',
-   locale: 'en-US',
-   limit: 1000
- }, false);
+    pageContentType: 'blogItem',
+    locale: 'en-US',
+    limit: 1000
+  }, false);
 }
 
 export const metadata = {
@@ -22,7 +22,7 @@ export const metadata = {
   icons: {
     icon: '/images/favicon.ico',
   },
-}
+};
 
 export default function Blog() {
   const data = use && use(getPageData());
@@ -80,7 +80,7 @@ export default function Blog() {
         isSmall: true
       }
     ]
-  }
+  };
 
   return (
     <PageLayout>
@@ -109,5 +109,5 @@ export default function Blog() {
         </div>
       </main>
     </PageLayout>
-  )
+  );
 }
