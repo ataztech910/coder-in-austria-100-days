@@ -7,7 +7,7 @@ import { Authenticator } from "@aws-amplify/ui-react";
 import { setAuthState } from '@/app/store/slices/authSlice';
 import { useDispatch } from 'react-redux';
 
-export default function RegistrationForm() {
+export default function RegistrationForm(formatParams: Partial<any>) {
   const dispatch = useDispatch();
   const router = useRouter();
 
