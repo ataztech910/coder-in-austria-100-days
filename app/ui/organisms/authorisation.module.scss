@@ -8,7 +8,7 @@
     &__middleBlock {
         @apply translate-y-[-50%] top-[50%] max-w-[1024px] m-auto block md:flex justify-between content-center rounded-none md:rounded-3xl;
         position: relative;
-        width: 100%;
+        width: 90%;
         background: $white;
         color: $darkGray;
         &__left, &__right {
