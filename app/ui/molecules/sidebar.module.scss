@@ -1,6 +1,7 @@
 @import '../../colors';
 
 .sidebar {
+    @apply block xl:hidden;
     position: relative;
     &__layout {
         &__menu {

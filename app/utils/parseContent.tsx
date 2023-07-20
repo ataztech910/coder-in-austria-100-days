@@ -1,17 +1,17 @@
 import { tagToObject } from "./tagToObject";
 
 
-const recomendedBlogContent = (initialContent: IContentfulData[]): IBlogBasic[] => {
+const recommendedBlogContent = (initialContent: IContentfulData[]): IBlogBasic[] => {
   if (!Array.isArray(initialContent)) {
     throw Error('Wrong data format');
   }
 
   const parsedData = [] as IBlogBasic[];
-  const isRecomended = initialContent.filter((item: IContentfulData) => {
+  const isRecommended = initialContent.filter((item: IContentfulData) => {
     return item.fields.recommended;
   });
   
-  isRecomended.forEach((item: IContentfulData) => {
+  isRecommended.forEach((item: IContentfulData) => {
     const date = new Date(item.sys.updatedAt);
     const [month, year] = [
       date.getDate(),
@@ -86,4 +86,4 @@ const popularBlogContent = (initialContent: IContentfulData[]): IBlogBasic[] => 
 };
 
 
-export { recomendedBlogContent, rescentBlogContent, popularBlogContent };
+export { recommendedBlogContent, rescentBlogContent, popularBlogContent };

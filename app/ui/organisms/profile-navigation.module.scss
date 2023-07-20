@@ -1,0 +1,41 @@
+@import '../../colors';
+
+.profileNavigation {
+  @apply py-6;
+  background-image: url('/banner-bg.png');
+  background-size: cover;
+  ul {
+    @apply p-4;
+    display: flex;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    li {
+      @apply mr-4;
+      display: inline-block;
+    }
+  }
+}
+.navLinkWrapper {
+  position: relative;
+  &__counter {
+    @apply rounded-full w-6 text-center absolute right-1 top-1;
+    background-color: $darkBlue;
+  }
+  &__navLink {
+    @apply p-8 rounded-xl;
+    min-width: 160px;
+    display: block;
+    background-color: $footerGray;
+    transition: 0.5s;
+    &:hover {
+      background-color: $iconGray;
+    }
+    &--active {
+      background-color: $iconGray;
+    }
+  }
+}

@@ -9,7 +9,7 @@ import TopMenu from '../molecules/TopMenu';
 import TopSearch from '../molecules/TopSearch';
 
 export default function Header() {
-    
+  const isMultilingual = false;
   return (
     <header data-testid="header" className={`${styles.header} sticky top-0`}>
       <div className='flex items-center justify-between content'>
@@ -17,8 +17,12 @@ export default function Header() {
         <Logo isResponsive={true} />
         <TopMenu />
         <TopSearch />
-        <Separator />
-        <LanguageSelector />
+        { isMultilingual &&
+          <>
+            <Separator />
+            <LanguageSelector />
+          </>
+        }
         <Separator />
         <Login />
       </div>

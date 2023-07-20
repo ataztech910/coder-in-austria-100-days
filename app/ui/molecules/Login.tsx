@@ -26,7 +26,7 @@ export default function Login() {
                 </>    
       }
       {authState.user?.username &&   
-                <a className={`${styles.login} pr-5 pl-5`} href="/profile">Hello, {authState.user?.username}</a>
+                <a className={`${styles.login} pr-5 pl-5`} href="/profile">Profile</a>
       }
     </div>
   );

@@ -2,12 +2,15 @@
 
 This is a source code for the 100 days challenge. The rules for the challenge are:
 
-1. Create an educational platform in 100 days  
+1. Create an educational platform in 100 days
 2. Use only free or partly free tools  (Contentful, AWS Amplify, Vercel, MongoDB, GraphQL, etc.)
-3. Make a daily video reports (upd. I cant do that right now. Sorry =( )  
-4. Spend not more than 45 minutes a day  
-5. NextJS will be in the core 
+3. Make a daily video reports (upd. I cant do that right now. Sorry =( )
+4. Spend not more than 45 minutes a day
+5. NextJS will be in the core
 6. The main part - have fun, it is not a way to billion dollars ( for the current state I just make it as a discipline and moving to finish )
+
+⌚ - In Progress
+✅ - Done
 
 ### Sprint 1/10
 - Day 1. Challenge planning for the next 10 days ✅
@@ -66,8 +69,21 @@ This is a source code for the 100 days challenge. The rules for the challenge ar
 - Day 4. Wrap current Auth with store ✅
 - Day 5. Update E2E tests having new requirements ✅
 - Day 6. Create the UI for the user profile in Figma + Create the statistics widget UI for main page ✅
-- Day 7. Create the profile page Frontend⌚
-- Day 8. Create the widget frontend⌚
-- Day 9. Connect profile and widget to the AWS data model⌚
+- Day 7. Create the profile navigation Frontend ✅
+- Day 8. Create the My Courses frontend ✅
+- Day 9. Update E2E with new page ✅
+- Day 10. Prepare other pages for profile ✅
+- Day 11. Sprint review and planning ✅
+
+### Sprint 6/10
+- Day 1. Create the component for percentage of course ⌚
+- Day 2. Create the Statistics table row component ⌚
+- Day 3. Create the Statistics table component ⌚
+- Day 4. Create the Profile page form ⌚
+- Day 5. Connect data to My courses page ⌚
+- Day 6. Connect data to Statistics page. pt 1 ⌚
+- Day 7. Connect data to Statistics page. pt 2 ⌚
+- Day 8. Connect data to Statistics page. pt 3 ⌚
+- Day 9. Connect user form to API ⌚
 - Day 10. Update E2E tests ⌚
-- Day 11. Sprint review and planning⌚
+- Day 11. Sprint review and planning ⌚
