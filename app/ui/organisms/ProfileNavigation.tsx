@@ -3,12 +3,10 @@ import styles from '@/app/ui/organisms/profile-navigation.module.scss';
 import React from "react";
 import { usePathname } from "next/navigation";
 import ProfileNavigationItem from "@/app/ui/molecules/ProfileNavigationItem.tsx";
-import { counter } from "@fortawesome/fontawesome-svg-core";
 
 function ProfileNavigation() {
   const pathname = usePathname();
-  console.log(pathname);
-  
+
   const navigation = [
     {
       title: "My Courses",

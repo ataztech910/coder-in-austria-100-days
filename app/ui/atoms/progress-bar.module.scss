@@ -1,0 +1,24 @@
+@import '../../colors';
+
+.progressBar {
+  color: $darkPurple;
+  &__progress {
+    @apply relative;
+    height: 0.5rem;
+    div {
+      @apply absolute;
+      height: 0.5rem;
+    }
+    &__percent {
+      background: $purple;
+      z-index: 10;
+    }
+    &__layout {
+      background: $underlineGray;
+      width: 100%;
+    }
+  }
+  &__label {
+    @apply mt-1 text-sm;
+  }
+}

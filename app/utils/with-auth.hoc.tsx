@@ -1,19 +1,9 @@
-import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { selectAuthState } from "@/app/store/slices/authSlice";
-import { useRouter } from "next/navigation";
+import React from "react";
+import { useAuthCustom } from "@/app/utils/hooks.ts";
 
 const withAuth = <P extends object>(WrappedComponent: React.ComponentType<P>) => {
   const ComponentWithAuth: React.FC<P> = (props: any) => {
-
-    const authState = useSelector(selectAuthState);
-    const router = useRouter();
-
-    useEffect(() => {
-      if (!authState?.user) {
-        router.push('/auth/signin');
-      }
-    }, [authState, router]);
+    useAuthCustom();
 
     return <WrappedComponent {...props} />;
   };

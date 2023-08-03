@@ -1,5 +1,5 @@
 'use client';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import styles from '@/app/ui/molecules/registration-form.module.scss';
 import { Auth } from 'aws-amplify';
 import "../../utils/amplifyConfigure";
@@ -7,9 +7,19 @@ import { Authenticator } from "@aws-amplify/ui-react";
 import { setAuthState } from '@/app/store/slices/authSlice';
 import { useDispatch } from 'react-redux';
 
+type FormTabType = 'signIn' | 'signUp' | 'resetPassword' | undefined;
+enum FormRouterPath {
+  signin = 'signIn',
+  signup = 'signUp',
+  resetpassword = 'resetPassword'
+}
+
 export default function RegistrationForm(formatParams: Partial<any>) {
   const dispatch = useDispatch();
   const router = useRouter();
+  const pathname = usePathname();
+  const currentRoute = pathname.split('/')[2] as keyof typeof FormRouterPath;
+  const currentTabSelection = FormRouterPath[currentRoute] as FormTabType;
 
   const services = {
     async handleSignUp(formData: any) {
@@ -53,7 +63,7 @@ export default function RegistrationForm(formatParams: Partial<any>) {
       <div className={styles.registrationForm} data-testid="registration">
         <Authenticator 
           services={services} 
-          initialState="signIn"
+          initialState={currentTabSelection}
         >
           {({ signOut }) => 
             <div className={styles.registrationForm__singnout}>
