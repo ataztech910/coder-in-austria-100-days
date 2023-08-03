@@ -17,46 +17,46 @@ export default meta;
 type Story = StoryObj<typeof BlogArticleList>;
 
 export const Static: Story = {
-    args: 
+  args: 
     {
-        items:[
-            {
-                tag: {
-                    color: 'red',
-                    isSmall: false,
-                    title: 'JS'
-                },
-                title: 'Lorem ipsum Lorem ipsum Lorem ipsum ',
-                text: 'The unconventional guide to unique dresses. Cheap cloths by the numbers. The evolution of fashion magazines. 18 things your boss expects you ',
-                date: 'Dec 06, 2023',
-                url: '/blog/123',
-                image: 'blog_card.png'
-            },
-            {
-                tag: {
-                    color: 'red',
-                    isSmall: false,
-                    title: 'JS'
-                },
-                title: 'Lorem ipsum Lorem ipsum Lorem ipsum ',
-                text: 'The unconventional guide to unique dresses. Cheap cloths by the numbers. The evolution of fashion magazines. 18 things your boss expects you ',
-                date: 'Dec 06, 2023',
-                url: '/blog/1235',
-                image: 'blog_card.png'
-            },
-            {
-                tag: {
-                    color: 'red',
-                    isSmall: false,
-                    title: 'JS'
-                },
-                title: 'Lorem ipsum Lorem ipsum Lorem ipsum ',
-                text: 'The unconventional guide to unique dresses. Cheap cloths by the numbers. The evolution of fashion magazines. 18 things your boss expects you ',
-                date: 'Dec 06, 2023',
-                url: '/blog/1234',
-                image: 'blog_card.png'
-            }
-        ]
+      items:[
+        {
+          tag: {
+            color: 'red',
+            isSmall: false,
+            title: 'JS'
+          },
+          title: 'Lorem ipsum Lorem ipsum Lorem ipsum ',
+          text: 'The unconventional guide to unique dresses. Cheap cloths by the numbers. The evolution of fashion magazines. 18 things your boss expects you ',
+          date: 'Dec 06, 2023',
+          url: '/blog/123',
+          image: 'blog_card.png'
+        },
+        {
+          tag: {
+            color: 'red',
+            isSmall: false,
+            title: 'JS'
+          },
+          title: 'Lorem ipsum Lorem ipsum Lorem ipsum ',
+          text: 'The unconventional guide to unique dresses. Cheap cloths by the numbers. The evolution of fashion magazines. 18 things your boss expects you ',
+          date: 'Dec 06, 2023',
+          url: '/blog/1235',
+          image: 'blog_card.png'
+        },
+        {
+          tag: {
+            color: 'red',
+            isSmall: false,
+            title: 'JS'
+          },
+          title: 'Lorem ipsum Lorem ipsum Lorem ipsum ',
+          text: 'The unconventional guide to unique dresses. Cheap cloths by the numbers. The evolution of fashion magazines. 18 things your boss expects you ',
+          date: 'Dec 06, 2023',
+          url: '/blog/1234',
+          image: 'blog_card.png'
+        }
+      ]
     },
 };
 

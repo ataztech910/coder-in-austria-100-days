@@ -7,7 +7,6 @@ import { use } from 'react';
 import { getPage } from '../utils/contentful';
 import { popularBlogContent, recommendedBlogContent, rescentBlogContent } from '../utils/parseContent';
 import PageLayout from '../page-layout';
-import * as console from "console";
 
 async function getPageData () {
   return await getPage({
@@ -30,8 +29,6 @@ export default function Blog() {
   const recommendedBlogData = data && recommendedBlogContent(data);
   const recentBlogData = data && { items: rescentBlogContent(data) };
   const popularBlogData = data && popularBlogContent(data);
-
-  console.log(recommendedBlogData);
 
   const breadCrumbs = {
     items: [

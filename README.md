@@ -76,7 +76,7 @@ This is a source code for the 100 days challenge. The rules for the challenge ar
 - Day 11. Sprint review and planning ✅
 
 ### Sprint 6/10
-- Day 1. Create the component for percentage of course ⌚
+- Day 1. Create the component for percentage of course ✅
 - Day 2. Create the Statistics table row component ⌚
 - Day 3. Create the Statistics table component ⌚
 - Day 4. Create the Profile page form ⌚
