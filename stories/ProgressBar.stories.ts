@@ -1,9 +1,9 @@
-import Motivation from '@/app/ui/atoms/ProgressBar';
+import ProgressBar from '@/app/ui/atoms/ProgressBar';
 import type { Meta, StoryObj } from '@storybook/react';
 
-const meta: Meta<typeof Motivation> = {
+const meta: Meta<typeof ProgressBar> = {
   title: 'UI Library/ProgressBar',
-  component: Motivation,
+  component: ProgressBar,
   tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
@@ -11,7 +11,7 @@ const meta: Meta<typeof Motivation> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Motivation>;
+type Story = StoryObj<typeof ProgressBar>;
 
 export const Static: Story = {
   args: { progress: 10 }
