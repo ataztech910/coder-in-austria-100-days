@@ -1,0 +1,29 @@
+@import '../../colors';
+.tableRow {
+  @apply block md:flex justify-between p-4 pb-2;
+  color: $darkGray;
+  border-bottom: 1px solid $footerGray;
+  &__name {
+    font-size: 1.2em;
+    @apply mb-4 md:m-0;
+  }
+  &__modules {
+    &__name {
+      @apply md:w-[50%];
+      font-size: 1em;
+      div {
+        @apply  mb-4;
+        line-height: 1;
+        height: 3rem;
+      }
+    }
+    &__status {
+      @apply w-[50%];
+      &__item {
+        @apply mb-4;
+        height: 3rem;
+      }
+    }
+    @apply flex justify-between md:w-[50%];
+  }
+}
