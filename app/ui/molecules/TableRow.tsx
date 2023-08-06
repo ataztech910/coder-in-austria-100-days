@@ -1,16 +1,6 @@
 import styles from '@/app/ui/molecules/table-row.module.scss';
 import ProgressBar from "@/app/ui/atoms/ProgressBar.tsx";
 
-interface IModulesStatistics {
-  name: string,
-  progress: number
-}
-
-interface ITableRow {
-    name: string;
-    modules: IModulesStatistics[]
-}
-
 export default function TableRow(props : { row: ITableRow }) {
   return (
     <div className={styles.tableRow}>

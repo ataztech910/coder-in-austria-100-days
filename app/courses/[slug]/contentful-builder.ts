@@ -6,7 +6,7 @@ const builder = (data: IContentfulData): ICourse => {
     preText: data.fields.preText.content[0].content[0].value,
     modules: buildModule(data.fields.modules),
     postText: data.fields.postText.content[0].content[0].value,
-    questionaire: {
+    questionnaire: {
       title: data.fields.questionaire.fields.title,
       slug: data.fields.questionaire.fields.slug
     },
