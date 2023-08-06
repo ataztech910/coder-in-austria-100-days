@@ -110,11 +110,11 @@ interface ICourse {
     preText: string;
     modules: ICourseModule[];
     postText: string;
-    questionaire: IQuestionaire;
+    questionnaire: IQuestionaire;
     bottomCourseImage: string;
     bottomTitle: string;
     bottomText: string;
-};
+}
 
 interface IAWSError {
     message: string;
@@ -124,4 +124,14 @@ interface IError {
     awsId: string;
     field: string;
     errorMessage: string;
+}
+
+interface IModulesStatistics {
+    name: string,
+    progress: number
+}
+
+interface ITableRow {
+    name: string;
+    modules: IModulesStatistics[]
 }
