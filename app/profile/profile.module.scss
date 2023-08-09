@@ -13,4 +13,7 @@
       width: 100%;
     }
   }
+  &__mycourses {
+    @apply max-w-[100%] md:max-w-[50%] mb-8;
+  }
 }

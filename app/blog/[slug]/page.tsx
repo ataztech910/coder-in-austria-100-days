@@ -78,14 +78,14 @@ async function getBlogData() {
 
 export async function generateMetadata({ params }: any) {
   const blogPage = await getPageData(params.slug);
-  return { title: `Coder in Austria | ${blogPage[0].fields.title}` };
+  return { title: `Coder in Austria | ${blogPage[0]?.fields?.title}` };
 }
 
 export default function BlogItem(props: IPageProps) {
   const data = use(getPageData(props.params.slug));
   const blogData = use(getBlogData());
   const popularBlogData = popularBlogContent(blogData);
-  const date = new Date(data[0].sys.updatedAt);
+  const date = data[0] ? new Date(data[0].sys.updatedAt) : new Date(Date.now());
   const [month, year] = [
     date.getDate(),
     date.getFullYear(),
