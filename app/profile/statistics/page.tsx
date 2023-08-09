@@ -1,8 +1,4 @@
-'use client';
-import withAuth from '@/app/utils/with-auth.hoc.tsx';
-
 function Statistics() {
-
   return (
     <p>
      Statistics page
@@ -10,4 +6,4 @@ function Statistics() {
   );
 }
 
-export default withAuth(Statistics);
+export default Statistics;

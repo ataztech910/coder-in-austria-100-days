@@ -101,6 +101,7 @@
 
 .input {
     @apply my-5;
+    color: $darkGray;
     &__title {
         @apply mb-2;
         color: $inputGray;
@@ -136,6 +137,7 @@
     background-color: $lightBlue !important;
     transition: 0.2s;
     border: 1px solid transparent;
+    color: $darkGray;
     &:hover {
         background-color: $middleBlue !important;
     }
