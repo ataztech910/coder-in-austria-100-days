@@ -65,7 +65,7 @@ export default function CourseItem(props: IPageProps) {
           setCourseData({ ...courseData, modules: modulesState });
         }
       });
-  }, [courseData, courseData?.modules]);
+  }, [courseData, courseData?.modules, getUserData]);
 
   return (
     <PageLayout>

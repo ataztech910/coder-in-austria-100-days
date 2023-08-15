@@ -40,7 +40,7 @@ export declare type UserDetails = LazyLoading extends LazyLoadingDisabled ? Eage
 
 export declare const UserDetails: (new (init: ModelInit<UserDetails>) => UserDetails) & {
   copyOf(source: UserDetails, mutator: (draft: MutableModel<UserDetails>) => MutableModel<UserDetails> | void): UserDetails;
-}
+};
 
 type EagerUserLessonsPassed = {
   readonly [__modelMeta__]: {
@@ -76,4 +76,4 @@ export declare type UserLessonsPassed = LazyLoading extends LazyLoadingDisabled 
 
 export declare const UserLessonsPassed: (new (init: ModelInit<UserLessonsPassed>) => UserLessonsPassed) & {
   copyOf(source: UserLessonsPassed, mutator: (draft: MutableModel<UserLessonsPassed>) => MutableModel<UserLessonsPassed> | void): UserLessonsPassed;
-}
+};
