@@ -1,6 +1,7 @@
 "use client"; // this is required
 
-import { Amplify, Auth, API } from "aws-amplify";
+import { Amplify } from "aws-amplify";
+import { Auth, API } from "aws-amplify";
 import awsExports from "../aws-exports";
 import '@aws-amplify/ui-react/styles.css';
 

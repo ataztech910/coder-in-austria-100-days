@@ -17,6 +17,7 @@ async function getPageData () {
 
 export default function Home() {
   const data = typeof use === 'function'? use(getPageData()) : {};
+  console.log(data);
   return (
     <PageLayout>
       <main>
