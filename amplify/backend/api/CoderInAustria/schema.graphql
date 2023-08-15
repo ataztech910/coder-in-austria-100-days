@@ -1,4 +1,13 @@
-type UserLessonsPassed @model @auth(rules: [{allow: owner, ownerField: "owner", operations: [read, update]}]) {
+type UserDetails @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  name: String
+  birthday: AWSDate
+  country: String
+  couresToPass: AWSJSON
+  owner: String
+}
+
+type UserLessonsPassed @model @auth(rules: [{allow: owner}]) {
   id: ID!
   courseID: String
   moduleID: String

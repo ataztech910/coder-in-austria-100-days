@@ -1,13 +1,13 @@
 import styles from '@/app/blog/[slug]/blog-item.module.scss';
 import BreadCrumbs from "@/app/ui/atoms/BreadCrumbs";
 import BlogNavigation from '@/app/ui/molecules/BlogNavigation';
-import { getPage } from "@/app/utils/contentful";
 import { popularBlogContent } from '@/app/utils/parseContent';
 import { use } from "react";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import BottomSeparator from '@/app/ui/atoms/BottomSeparator';
 import PageLayout from '@/app/page-layout';
+import { getBlogData, getPageData } from "@/app/utils/api-controller.ts";
 
 const renderOptions = {
   renderNode: {
@@ -58,23 +58,6 @@ const renderOptions = {
     },
   },
 };
-
-async function getPageData(slug: string) {
-  return await getPage({
-    pageContentType: 'blogItem',
-    locale: 'en-US',
-    limit: 1000,
-    slug
-  }, false);
-}
-
-async function getBlogData() {
-  return await getPage({
-    pageContentType: 'blogItem',
-    locale: 'en-US',
-    limit: 1000
-  }, false);
-}
 
 export async function generateMetadata({ params }: any) {
   const blogPage = await getPageData(params.slug);
@@ -157,18 +140,21 @@ export default function BlogItem(props: IPageProps) {
         <div className={`${styles.blogItem} content !mt-8`}>
           <div className={styles.blogItem__left}>
             <BreadCrumbs {...breadCrumbs} />
-            <h1>{data[0].fields.title}</h1>
-            <div className={styles.blogItem__left__date}>
-              {`${month} ${date.toLocaleString('default', { month: 'short' })}, ${year}`}
-            </div>
-            <BottomSeparator {...separatorConfig} />
-            <div className={styles.blogItem__left__image} style={{
-              backgroundImage: `url(https:${data[0]?.fields?.topImage?.fields?.file?.url})`
-            }}>
-            </div>
-            <div className={styles.blogItem__left__content}>
-              {documentToReactComponents(data[0].fields.blogText, renderOptions)}
-            </div>
+            {data.length > 0 &&
+              <section key={data[0].fields.title}>
+                <h1>{data[0].fields.title}</h1>
+                <div className={styles.blogItem__left__date}>
+                  {`${month} ${date.toLocaleString('default', { month: 'short' })}, ${year}`}
+                </div>
+                <BottomSeparator {...separatorConfig} />
+                <div className={styles.blogItem__left__image} style={{
+                  backgroundImage: `url(https:${data[0]?.fields?.topImage?.fields?.file?.url})`
+                }}>
+                </div>
+                <div className={styles.blogItem__left__content}>
+                  {documentToReactComponents(data[0].fields.blogText, renderOptions)}
+                </div>
+              </section>}
           </div>
           <div className={styles.blogItem__right}>
             <div className={styles.blogItem__right__navigation}>

@@ -3,8 +3,9 @@ import Tag from '../atoms/Tag';
 import Link from 'next/link';
 
 export default function BlogCard(blogCardData: any) {
+  const makeUrl = `/${blogCardData.folder ?? 'blog'}/${blogCardData.slug}`;
   return (
-    <Link href={`/blog/${blogCardData.slug}`}
+    <Link href={makeUrl}
       className={styles.blogCard}
       style={{
         backgroundImage: `url(${blogCardData.image})`
