@@ -80,7 +80,7 @@ This is a source code for the 100 days challenge. The rules for the challenge ar
 - Day 2. Create the Statistics table row component ✅
 - Day 3. Create the Statistics table component ✅
 - Day 4. Create the Profile page form ✅
-- Day 5. Connect data to My courses page ⌚
+- Day 5. Connect data to My courses page ✅
 - Day 6. Connect data to Statistics page. pt 1 ⌚
 - Day 7. Connect data to Statistics page. pt 2 ⌚
 - Day 8. Connect data to Statistics page. pt 3 ⌚
